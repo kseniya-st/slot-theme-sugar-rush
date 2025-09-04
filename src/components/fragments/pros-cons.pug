@@ -1,0 +1,10 @@
+//- @defaultData = prosCons
+//- @mixin
+mixin prosCons(data)
+    div.pros-cons
+        each item in data
+            .pros-cons__item(class=item.modificator)
+                p.pros-cons__title=item.title
+                ul.pros-cons__list 
+                    each el in item.list
+                        li= el

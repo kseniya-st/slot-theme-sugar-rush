@@ -1,0 +1,77 @@
+@use "./media" as *;
+@use "sass:math";
+$font-size-default: 18;
+
+@function rem($pxValue) {
+    @return math.div($pxValue, $font-size-default) + rem;
+}
+@mixin font-display() {
+    font-size: rem(57);
+    line-height: rem(64);
+    letter-spacing: 0;
+
+    @include media-max-sm {
+        font-size: rem(36);
+        line-height: rem(44);
+    }
+}
+
+@mixin font-headline() {
+    font-size: rem(32);
+    line-height: rem(40);
+    letter-spacing: 0;
+
+    @include media-max-sm {
+        font-size: rem(24);
+        line-height: 136%;
+    }
+}
+
+@mixin font-title() {
+    font-size: rem(25);
+    line-height: 136%;
+    letter-spacing: 0;
+
+    @include media-max-sm {
+        font-size: rem(18);
+    }
+}
+
+@mixin font-label() {
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: 136%;
+    text-transform: uppercase;
+
+    @include media-max-sm {
+        font-size: rem(14);
+    }
+}
+
+@mixin font-label-m() {
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: 136%;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+@mixin font-body() {
+    font-size: rem(18);
+    font-weight: 400;
+    line-height: 136%;
+
+    @include media-max-sm {
+        font-size: rem(14);
+    }
+}
+
+@mixin font-body-m {
+    font-size: rem(14);
+    line-height: 136%;
+}
+
+@mixin font-body-s {
+    font-size: rem(12);
+    line-height: rem(16);
+}

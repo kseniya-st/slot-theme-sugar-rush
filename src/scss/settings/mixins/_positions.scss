@@ -1,0 +1,79 @@
+@mixin absolute($top: null, $left: null, $bottom: null, $right: null, $all: null) {
+    position: absolute;
+
+    @if $top != null {
+        top: $top;
+    }
+    @if $left != null {
+        left: $left;
+    }
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+    @if $right != null {
+        right: $right;
+    }
+    @if $all != null {
+        inset: $all;
+    }
+}
+
+@mixin relative($top: null, $left: null, $bottom: null, $right: null, $all: null) {
+    position: relative;
+
+    @if $top != null {
+        top: $top;
+    }
+    @if $left != null {
+        left: $left;
+    }
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+    @if $right != null {
+        right: $right;
+    }
+    @if $all != null {
+        inset: $all;
+    }
+}
+
+@mixin fixed($top: null, $left: null, $bottom: null, $right: null, $all: null) {
+    position: fixed;
+
+    @if $top != null {
+        top: $top;
+    }
+    @if $left != null {
+        left: $left;
+    }
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+    @if $right != null {
+        right: $right;
+    }
+    @if $all != null {
+        inset: $all;
+    }
+}
+
+@mixin sticky($top: null, $left: null, $bottom: null, $right: null, $all: null) {
+    position: sticky;
+
+    @if $top != null {
+        top: $top;
+    }
+    @if $left != null {
+        left: $left;
+    }
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+    @if $right != null {
+        right: $right;
+    }
+    @if $all != null {
+        inset: $all;
+    }
+}

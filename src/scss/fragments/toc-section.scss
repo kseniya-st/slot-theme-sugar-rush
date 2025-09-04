@@ -1,0 +1,145 @@
+@use "../settings" as *;
+
+.toc-section {
+    @include relative();
+
+    border-radius: 8px;
+    border: 1px solid var(--outline-variant, #43483e);
+    background: var(--surface-container-low, #191d17);
+
+    @include flex(column, stretch, flex-start);
+
+    &.active {
+        .toc-section {
+            &__title::after {
+                transform: translateY(-50%) rotate(-180deg);
+            }
+            &__nav {
+                display: block;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        @include flex(row, center, space-between, 20px);
+        cursor: pointer;
+
+        padding: 28px 32px;
+        margin: 0;
+        min-height: 96px;
+
+        &::after,
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            content: url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23a)"><path d="M32 20.904 30.12 19 24 25.181l-6.12-6.18L16 20.904 24 29z" fill="%2343483E"/></g><defs><clipPath id="a"><rect x="44" y="4.001" width="40" height="40" rx="20" transform="rotate(90 44 4.001)" fill="%23fff"/></clipPath></defs></svg>');
+            @include size(48px, 48px);
+            right: 32px;
+            display: block;
+            @include transition(transform);
+        }
+
+        &::before {
+            content: "";
+            @include size(40px, 40px);
+            position: absolute;
+            right: calc(32px + 4px);
+            border-radius: 50%;
+            @include transition(background);
+        }
+
+        @include hover {
+            &::before {
+                background: var(--on-surface-variant-opacity-008, rgba(202, 196, 208, 0.08));
+            }
+        }
+
+        @include activeFocus {
+            &::before {
+                background: var(--on-surface-variant-opacity-012, rgba(202, 196, 208, 0.12));
+            }
+        }
+
+        @include media-max-sm {
+            padding: 16px;
+            min-height: 80px;
+
+            &::after {
+                right: 16px;
+            }
+            &::before {
+                right: calc(16px + 4px);
+            }
+        }
+    }
+
+    &__nav {
+        padding: 16px 32px;
+        border-top: 1px solid var(--outline-variant, #43483e);
+        display: none;
+
+        @include media-max-sm {
+            padding: 16px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        row-gap: 8px;
+
+        @include media-max-lg {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media-max-mlg {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media-max-md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media-max-sm {
+            grid-template-columns: 1fr;
+            row-gap: 16px;
+        }
+    }
+
+    &__item {
+        @include relative;
+        @include flex();
+
+        a {
+            @include flex(row, center, center, 8px);
+            padding: 10px 12px;
+
+            border-radius: 8px;
+
+            color: #fff;
+
+            @include transition(background);
+
+            @include hover {
+                background: var(--primary-opacity-008, rgba(208, 188, 255, 0.08));
+            }
+
+            @include activeFocus {
+                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+            }
+
+            @include media-max-sm {
+                padding-block: 8px;
+            }
+        }
+    }
+
+    &__item a {
+    }
+}

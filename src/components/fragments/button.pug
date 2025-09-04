@@ -1,0 +1,12 @@
+//- @mixin
+include /mixins/icons.pug
+mixin button(modificator, text, svgItem, svgEnd)
+    button(
+        class=`btn sf-link ${modificator}` 
+        data-sf-a="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8="
+    )   
+        if svgItem
+            +icon(svgItem)
+        != text
+        if svgEnd
+            +icon(svgEnd)

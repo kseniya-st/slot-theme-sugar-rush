@@ -1,0 +1,14 @@
+@mixin lineClamp($line: null) {
+    @if $line != null {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+        overflow: hidden;
+    }
+}
+
+@mixin overflowEllipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

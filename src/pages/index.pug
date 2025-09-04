@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title main page
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+    link(rel="stylesheet",  href=cssPath)
+    body
+        include /layouts/base.pug
+        include ../components/blocks/header.pug
+
+        main
+            section.wrapper
+                h2 Today IPL Match Prediction
+                include ../components/fragments/button.pug
+                +button('btn--outlined', 'Test')
+
+            include ../components/blocks/section-faq.pug 
+
+        include ../components/fragments/go-up.pug
+        include ../components/blocks/footer.pug
+        include ../components/fragments/mob-btn.pug
+        +mobBtn(mobBtn)
+
+        script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+        script(src=jsPath, type=jsType ? 'module' : undefined)

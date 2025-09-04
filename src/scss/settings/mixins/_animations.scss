@@ -1,0 +1,98 @@
+@mixin marquee($width, $gap, $time: 30s) {
+    display: inline-block;
+    animation: marquee $time ease-in-out infinite;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        5% {
+            transform: translateX(0);
+        }
+        10% {
+            transform: translateX(calc(($width + $gap) * -1));
+        }
+        15% {
+            transform: translateX(calc(($width + $gap) * -1));
+        }
+        20% {
+            transform: translateX(calc(($width + $gap) * -2));
+        }
+        25% {
+            transform: translateX(calc(($width + $gap) * -2));
+        }
+        30% {
+            transform: translateX(calc(($width + $gap) * -3));
+        }
+        35% {
+            transform: translateX(calc(($width + $gap) * -3));
+        }
+        40% {
+            transform: translateX(calc(($width + $gap) * -4));
+        }
+        45% {
+            transform: translateX(calc(($width + $gap) * -4));
+        }
+        50% {
+            transform: translateX(calc(($width + $gap) * -5));
+        }
+        55% {
+            transform: translateX(calc(($width + $gap) * -5));
+        }
+        60% {
+            transform: translateX(calc(($width + $gap) * -6));
+        }
+        65% {
+            transform: translateX(calc(($width + $gap) * -6));
+        }
+        70% {
+            transform: translateX(calc(($width + $gap) * -7));
+        }
+        75% {
+            transform: translateX(calc(($width + $gap) * -7));
+        }
+        80% {
+            transform: translateX(calc(($width + $gap) * -8));
+        }
+        85% {
+            transform: translateX(calc(($width + $gap) * -8));
+        }
+        90% {
+            transform: translateX(calc(($width + $gap) * -9));
+        }
+        95% {
+            transform: translateX(calc(($width + $gap) * -9));
+        }
+        100% {
+            transform: translateX(calc(($width + $gap) * -10));
+        }
+    }
+}
+
+@mixin marqueeLinear($start: 0, $time: 30s) {
+    display: inline-block;
+    animation: marqueeLinear $time linear infinite;
+
+    @if $start != 0 {
+        padding-left: $start;
+    }
+    @keyframes marqueeLinear {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+@mixin marqueeLinearInfinite($count: 1, $width: 320px, $time: 30s) {
+    display: inline-block;
+    animation: marqueeLinearInf $time linear infinite;
+
+    @keyframes marqueeLinearInf {
+        to {
+            transform: translateX($count * $width * -1);
+        }
+    }
+}

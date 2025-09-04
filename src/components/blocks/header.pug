@@ -1,0 +1,28 @@
+include /layouts/base.pug
+header.header.js-header 
+    a.header__logo(href="#") 
+        img(src="img/logo.png" alt="")
+    nav.header__nav.js-burger__nav.js-menu
+        ul.header-menu.js-menu__list
+            each item in navigation
+                li(class=`item ${item.submenu ? 'parent js-menu__item' : ''}`) 
+                    a(href= item.link)= item.title
+                    if item.submenu 
+                        include /img/svg/test.svg
+                        ul.submenu.js-menu__list
+                            each el in item.submenu 
+                                li(class=`item ${el.submenu ? 'parent js-menu__item' : ''}`) 
+                                    a(href= el.link)= el.title
+                                    if el.submenu 
+                                        include /img/svg/test.svg
+                                        ul.submenu
+                                            each submenuEl in el.submenu 
+                                                li.item
+                                                    a(href= submenuEl.link)= submenuEl.title
+    .header__burger.js-burger
+        span 
+
+
+
+
+

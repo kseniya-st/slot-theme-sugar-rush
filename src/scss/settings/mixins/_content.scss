@@ -1,0 +1,27 @@
+@mixin imgWrap($width: null, $height: null, $fill: contain) {
+    @include size($width, $height);
+
+    img,
+    svg {
+        @include size(100%, 100%);
+        @include maxSize(100%, 100%);
+        object-fit: $fill;
+    }
+}
+
+@mixin imgWrapMax($max-width: null, $max-height: null, $fill: contain) {
+    @include maxSize($max-width, $max-height);
+
+    img,
+    svg {
+        @include size(100%, 100%);
+        @include maxSize(100%, 100%);
+        object-fit: $fill;
+    }
+}
+
+@mixin imgFix($width: null, $height: null, $fill: contain) {
+    @include minSize($width, $height);
+    @include maxSize($width, $height);
+    object-fit: $fill;
+}

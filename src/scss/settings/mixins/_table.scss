@@ -1,0 +1,77 @@
+@mixin trBorderRadius($radius: null) {
+    @if $radius != null {
+        td,
+        th {
+            &:first-child {
+                border-radius: $radius 0 0 $radius;
+            }
+            &:last-child {
+                border-radius: 0 $radius $radius 0;
+            }
+        }
+    }
+}
+
+@mixin tdPadding($block: null, $inline: null, $center: null) {
+    padding-block: $block;
+    padding-inline: $inline;
+
+    @if $inline != null {
+        &:first-child {
+            padding-left: $inline;
+        }
+        &:last-child {
+            padding-right: $inline;
+        }
+    }
+
+    @if $center != null {
+        &:not(:first-child) {
+            padding-left: calc($center / 2);
+        }
+        &:not(:last-child) {
+            padding-right: calc($center / 2);
+        }
+    }
+}
+
+@mixin tableBorder($thSize: null, $thColor: null, $tdSize: null, $tdColor: null) {
+    @if $thSize != null and $thColor != null {
+        th {
+            &:not(:last-child) {
+                border-right: $thSize solid $thColor;
+            }
+        }
+    }
+
+    @if $tdSize != null and $tdColor != null {
+        tr:not(:last-child) {
+            td {
+                border-bottom: $tdSize solid $tdColor;
+            }
+        }
+        td {
+            &:not(:last-child) {
+                border-right: $tdSize solid $tdColor;
+            }
+        }
+    }
+
+    @if $thSize != null and $thColor != null and $tdSize == null and $tdColor == null {
+        th {
+            &:not(:last-child) {
+                border-right: $thSize solid $thColor;
+            }
+        }
+        tr:not(:last-child) {
+            td {
+                border-bottom: $thSize solid $thColor;
+            }
+        }
+        td {
+            &:not(:last-child) {
+                border-right: $thSize solid $thColor;
+            }
+        }
+    }
+}

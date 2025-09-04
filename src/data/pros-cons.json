@@ -1,0 +1,44 @@
+{
+    "prosCons": [
+        {
+            "modificator": "pros-cons__item--pros",
+            "title": "Pros",
+            "list": [
+                "Welcomes players from India, available in Hindi",
+                "Full-range single-wallet gambling provider",
+                "High odds",
+                "Lots of cricket betting options"
+            ]
+        },
+        {
+            "modificator": "pros-cons__item--cons",
+            "title": "Cons",
+            "list": [
+                "Customer service",
+                "Website is cluttered and difficult to navigate",
+                "Still not particularly trustworthy; doesn't work well with 3rd-party arbitrators"
+            ]
+        }
+    ],
+    "prosCons1": [
+        {
+            "modificator": "pros-cons__item--pros",
+            "title": "Pros",
+            "list": [
+                "Easier login features;",
+                "Dedicated offers for mobile users;",
+                "Mobile-friendly payment options;",
+                "Live streaming and in-play betting options;"
+            ]
+        },
+        {
+            "modificator": "pros-cons__item--cons",
+            "title": "Cons",
+            "list": [
+                "Limited number of features and games;",
+                "Regular updates are needed;",
+                "It consumes storage space."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+@use "../settings" as *;
+
+.section-faq {
+    display: grid;
+    grid-template-columns: 1fr 588px;
+    column-gap: 20px;
+    row-gap: 32px;
+
+    @include media-max-lg {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-max-mlg {
+        grid-template-columns: 1fr;
+    }
+
+    @include media-max-sm {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+    }
+
+    &__list {
+        @include flex(column, stretch, flex-start, 8px);
+        flex: 1;
+    }
+
+    &__item {
+        @include relative();
+        &:not(:first-child) {
+            border-top: 1px solid #43483e;
+        }
+
+        p {
+            margin-block: 8px;
+        }
+
+        &[open] {
+            summary {
+                svg {
+                    transform: translate(0, -50%) rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    summary {
+        @include relative();
+        @include flex(row, center, space-between, 8px);
+        min-height: 64px;
+
+        padding: 8px 0;
+        padding-right: 48px;
+
+        cursor: pointer;
+
+        list-style: none;
+
+        &::marker {
+            content: "";
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            @include absolute(50%, $right: 4px);
+
+            transform: translate(0, -50%);
+            @include size(40px, 40px);
+
+            border-radius: 50%;
+            pointer-events: none;
+
+            @include transition(background);
+        }
+
+        @include hover {
+            &::after {
+                background: var(--on-surface-variant-opacity-008, rgba(202, 196, 208, 0.08));
+            }
+        }
+
+        @include active {
+            &::after {
+                background: var(--on-surface-variant-opacity-012, rgba(202, 196, 208, 0.12));
+            }
+        }
+
+        svg {
+            @include absolute(50%, $right: 0);
+            transform: translate(0, -50%);
+
+            @include minSize(48px, 48px);
+            @include size(48px, 48px);
+            @include transition(transform);
+        }
+
+        @include media-max-sm {
+            padding-block: 0;
+            min-height: 48px;
+        }
+    }
+
+    .join-form {
+        margin-top: 59px;
+
+        @include media-max-mlg {
+            margin-top: 0;
+        }
+    }
+}

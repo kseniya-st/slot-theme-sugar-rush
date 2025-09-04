@@ -1,0 +1,31 @@
+@use "settings" as *;
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--width-container) + var(--offsets, 20px) * 2);
+
+    margin: var(--wrapper-margin) auto;
+    padding: 0 var(--offsets, 20px);
+
+    & > img {
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    & > .btn {
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    @include media-max-md {
+        & > .btn {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+@use "settings" as *;
+
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: var(--editor-content-margin, 16px);
+
+    &:not(:first-child) {
+        margin-top: var(--editor-content-margin, 16px);
+    }
+}
+
+a {
+    color: var(--on-surface-variant);
+}
+
+p:not([class]) {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    margin-top: var(--editor-content-margin, 16px);
+}
+
+p,
+ul,
+ol {
+    &:not([class]) {
+        a:not([class]) {
+            color: var(--primary, #7ade50);
+            @include transition(color);
+            @include hoverActiveFocus {
+                color: #fff;
+            }
+        }
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 32px;
+
+    @include media-max-sm {
+        margin-bottom: 28px;
+    }
+}
+
+h3 {
+    &:not([class]) {
+        margin-top: 24px;
+    }
+
+    @include media-max-sm {
+        &:not([class]) {
+            margin-top: 20px;
+        }
+    }
+}
+
+ul:not([class]),
+ul.wp-block-list,
+ol:not([class]),
+ol.wp-block-list {
+    &:not(:first-child) {
+        margin-top: var(--editor-content-margin, 16px);
+    }
+    li {
+        position: relative;
+    }
+}
+
+ol:not([class]),
+ol.wp-block-list {
+    counter-reset: ol-default;
+
+    li {
+        counter-increment: ol-default;
+        padding-left: 27px;
+
+        &::before {
+            position: absolute;
+            content: counter(ol-default) ". ";
+            width: 27px;
+            left: 0;
+            text-align: center;
+        }
+    }
+
+    @include media-max-sm {
+        li {
+            padding-left: 16px;
+
+            &::before {
+                width: 16px;
+            }
+        }
+    }
+}
+
+ul:not([class]),
+ul.wp-block-list {
+    li {
+        padding-left: 26px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 11px;
+            width: 5px;
+            height: 5px;
+            border-radius: 8px;
+            background: var(--on-surface, #e1e4d9);
+        }
+
+        @include media-max-sm {
+            padding-left: 20px;
+
+            &::before {
+                top: 9px;
+                left: 9px;
+                width: 3px;
+                height: 3px;
+            }
+        }
+    }
+}

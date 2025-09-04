@@ -1,0 +1,20 @@
+//- @defaultData = tablev1, "table--v1", "Test", true
+//- @mixin
+mixin table(table, className, title, isScroll)
+    .table(class=className)
+        if title 
+            p.table__title= title
+        .table__wrap.wp-block-table.js-scroll-list
+            table.table__block
+                if table.thead 
+                    thead 
+                        each tr in table.thead 
+                            tr 
+                                each th in tr 
+                                    th(class=`${th.className ? th.className : ""}`)!= th.text
+                if table.tbody
+                    tbody 
+                        each tr in table.tbody 
+                            tr      
+                                each td in tr   
+                                    td(class=`${td.className ? td.className : ""}`)!= td.text

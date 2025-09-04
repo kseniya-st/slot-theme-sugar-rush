@@ -1,0 +1,11 @@
+{
+    "mobBtn": {
+        "img":"mob-btn-img-1",
+        "text":"Download app",
+        "span":"Bonus: AU$ 1000",
+        "btn": {
+            "modificator":"btn--primary",
+            "text":"Downlaod"
+        }
+    }
+}

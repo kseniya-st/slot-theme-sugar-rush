@@ -1,0 +1,8 @@
+include /layouts/base.pug
+.toc-section.js-toc
+    h3.toc-section__title.js-toc__trigger Content
+    nav.toc-section__nav 
+        ul.toc-section__list 
+            each item in toc 
+                li.toc-section__item 
+                    a(href=item.link).toc-section__link= item.title 

@@ -1,0 +1,23 @@
+@mixin radialGradientAnimation($color1: red, $color2: blue) {
+    background-size: 200% 300%;
+    background-position: 0 50%;
+    background-image: radial-gradient(50% 60% at 50% 50%, $color1 0%, $color2 100%);
+
+    animation: gradientAnimation 4s linear infinite;
+
+    @keyframes gradientAnimation {
+        0%,
+        100% {
+            background-position: 0 50%;
+        }
+        25% {
+            background-position: 50% 0;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        75% {
+            background-position: 50% 100%;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@mixin thin-v-scrollbar(
+    $width: 4px,
+    $thumb-width: 4px,
+    $bg: transparent,
+    $color: var(--primary-opacity-012, rgba(208, 188, 255, 0.12))
+) {
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: thin;
+        scrollbar-color: $color transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: $color;
+        border-radius: 9px;
+        border: $thumb-width solid $bg;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 9px;
+    }
+}
+
+@mixin thin-v-scrollbar-dark(
+    $width: 4px,
+    $thumb-width: 4px,
+    $bg: transparent,
+    $color: var(--primary-opacity-012, rgba(208, 188, 255, 0.12))
+) {
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: thin;
+        scrollbar-color: $color transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: $color;
+        border-radius: 9px;
+        border: $thumb-width solid $bg;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 9px;
+    }
+}
+
+@mixin default-scrollbar {
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: 10px;
+        scrollbar-color: var(--primary, #7ade50) transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: var(--primary, #7ade50);
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        // box-shadow: inset 0 0 4px 0px rgb(109, 109, 109);
+    }
+}
+
+@mixin hideScrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+}

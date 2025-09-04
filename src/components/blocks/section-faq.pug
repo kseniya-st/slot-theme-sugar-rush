@@ -1,0 +1,11 @@
+include /layouts/base.pug
+section.wrapper.section-faq
+    .section.faq__col
+        h2 FAQs
+        .section-faq__list
+            each item in faq 
+                details.section-faq__item 
+                    summary= item.quest
+                        +icon("test2")
+                    p= item.answer
+        +prosCons(prosCons)

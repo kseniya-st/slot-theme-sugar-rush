@@ -1,0 +1,550 @@
+@use "../settings" as *;
+.header {
+    --header-height: 60px;
+    $burger-max: $max-lg;
+    $burger-min: $min-lg;
+
+    background: var(--scrim, #000);
+    box-shadow:
+        0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+    @include relative;
+    @include flex(row, center, flex-start, 16px);
+    padding-block: 8px;
+    padding-inline: calc((100vw - var(--width-container)) / 2);
+
+    @include mediaMax(1480px) {
+        padding-inline: var(--offsets, 20px);
+    }
+
+    @include mediaMax($burger-max) {
+        --header-height: 60px;
+    }
+
+    &__logo {
+        display: flex;
+
+        &:is(a) {
+            @include hoverOpacity;
+        }
+
+        img,
+        svg {
+            @include maxSize(200px, 50px);
+            min-height: 44px;
+            object-fit: contain;
+        }
+    }
+
+    &__nav {
+        z-index: $z-index-menu;
+        margin-left: auto;
+        background: var(--scrim, #000);
+
+        @include mediaMax($burger-max) {
+            overflow-y: auto;
+            @include absolute(calc(100% + 1px), 0);
+            @include size(100%, calc(100svh - var(--header-height)));
+            @include thin-v-scrollbar;
+        }
+    }
+
+    &__burger {
+        @include relative();
+        @include flex(row, center, center);
+        @include size(48px, 48px);
+        padding: 14px 11px;
+        cursor: pointer;
+        margin-left: auto;
+
+        border-radius: 50%;
+        @include transition(background);
+
+        @include mediaMin($burger-min) {
+            display: none;
+        }
+
+        @include hoverActive {
+            background: var(--m-3-state-layers-dark-primary-opacity-012, rgba(208, 188, 255, 0.12));
+        }
+
+        span {
+            @include absolute(50%);
+            transform: translateY(-50%);
+            transition:
+                opacity 0.2s ease 0.2s,
+                background 0.2s;
+        }
+
+        span,
+        &::before,
+        &::after {
+            @include size(18px, 2px);
+            background-color: var(--on-surface-variant, #b6b6b6);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            @include absolute();
+        }
+
+        &::before {
+            top: 18px;
+            transition:
+                top 0.3s ease 0.3s,
+                transform 0.3s ease-out 0.1s,
+                background 0.2s;
+        }
+        &::after {
+            bottom: 18px;
+            transition:
+                bottom 0.3s ease 0.3s,
+                transform 0.3s ease-out 0.1s,
+                background 0.2s;
+        }
+    }
+
+    .header-menu {
+        flex-wrap: wrap;
+        @include flex(row, center, flex-start, 16px);
+
+        @include mediaMax($burger-max) {
+            @include flex(column, stretch, flex-start, 0);
+        }
+
+        ///////////////////////////////////////////////////////////////
+        //                     COMMON
+        ///////////////////////////////////////////////////////////////
+        .submenu {
+            @include flex(column, stretch, flex-start);
+            @include thin-v-scrollbar;
+
+            a,
+            span {
+                color: var(--on-surface, #e1e4d9);
+            }
+        }
+
+        .item {
+            @include relative;
+            @include flex;
+            @include transition(background);
+
+            &.parent {
+                cursor: pointer;
+                gap: 8px;
+            }
+
+            a,
+            span {
+                @include flex(row, center);
+                @include transition(#{background, color});
+            }
+
+            svg {
+                @include transition(transform);
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////
+        //                     DESKTOP
+        ///////////////////////////////////////////////////////////////
+
+        @include mediaMin($burger-min) {
+            // First Level Desktop Styles
+            & > .item {
+                &.parent,
+                &:not(.parent) > a,
+                &:not(.parent) > span {
+                    @include flex(row, center);
+
+                    padding: 10px 16px;
+                    border-radius: 8px;
+
+                    @include hoverActiveFocus {
+                        background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+                    }
+                }
+
+                & > a,
+                & > span {
+                    color: #fff;
+                    text-align: center;
+                }
+
+                & > svg {
+                    @include fixSize(18px, 18px);
+                    path {
+                        fill: #fff;
+                    }
+                }
+
+                &.current {
+                    &.parent,
+                    &:not(.parent) > a,
+                    &:not(.parent) > span {
+                        background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+                    }
+                }
+
+                &.parent {
+                    @include hover {
+                        & > svg {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+
+                @for $i from 1 through 50 {
+                    &:nth-child(#{$i}) {
+                        z-index: calc(50 - $i);
+                    }
+                }
+            }
+
+            // Common item styles
+            .item {
+                justify-content: space-between;
+            }
+
+            .item.parent {
+                &::before {
+                    content: "";
+                    @include size(100%, 16px);
+                    @include absolute(100%, 0);
+                    transform: translate(0, -4px);
+                    display: none;
+                }
+
+                @include hover {
+                    &::before {
+                        display: block;
+                    }
+                    & > .submenu {
+                        display: flex;
+                    }
+                }
+            }
+
+            .item_left {
+                & > .submenu {
+                    left: unset;
+                    right: 0;
+                    & > .item {
+                        flex-direction: row-reverse;
+                        a,
+                        span {
+                            flex-direction: row-reverse;
+                        }
+
+                        & > svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .submenu {
+                        left: 0px;
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+
+            // Common submenu styles
+            .submenu {
+                width: 224px;
+
+                display: none;
+
+                padding-block: 8px;
+                border-radius: 4px;
+                background: var(--scrim, #000);
+                box-shadow:
+                    0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+                    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+                @include absolute(calc(100% + 7px), 0);
+
+                .submenu {
+                    overflow-y: auto;
+                    overflow-x: clip;
+                    max-height: 300px;
+
+                    top: -8px;
+                    left: calc(100% - 1px);
+                    transform: translateX(0);
+
+                    @include thin-v-scrollbar-dark;
+                }
+
+                .item {
+                    text-transform: none;
+
+                    &.parent,
+                    &:not(.parent) > a,
+                    &:not(.parent) > span {
+                        padding: 8px 16px;
+                        min-height: 40px;
+                        text-align: left;
+
+                        @include hoverActiveFocus {
+                            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+                        }
+                    }
+
+                    &.parent {
+                        & > a {
+                            @include hoverActiveFocus {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    &:not(.parent) a,
+                    &:not(.parent) span {
+                        @include size(100%);
+                    }
+
+                    &.current {
+                        &.parent,
+                        &:not(.parent) > a,
+                        &:not(.parent) > span {
+                            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+                        }
+                    }
+                }
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////
+        //                     MOBILE
+        ///////////////////////////////////////////////////////////////
+
+        @include mediaMax($burger-max) {
+            & > .item.parent {
+                & > svg {
+                    transform: rotate(-90deg);
+                }
+
+                &.active {
+                    & > svg {
+                        transform: rotate(-90deg);
+                    }
+                    padding-bottom: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            // Common Item Styles
+            .item {
+                flex-wrap: wrap;
+
+                &.parent,
+                &:not(.parent) > a,
+                &:not(.parent) > span {
+                    padding: 8px 16px;
+                    @include size(100%);
+                    min-height: 40px;
+                }
+
+                svg {
+                    margin-left: auto;
+                    @include fixSize(24px, 24px);
+                    path {
+                        fill: var(--on-surface-variant, #43483e);
+                    }
+                }
+
+                &.parent.active {
+                    @include relative;
+                    background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+
+                    & > svg {
+                        transform: rotate(0);
+                    }
+
+                    & > .submenu {
+                        display: flex;
+                    }
+                }
+
+                &.parent {
+                    gap: 8px;
+
+                    & > a,
+                    & > span {
+                        max-width: calc(100% - 36px);
+                    }
+
+                    & > a {
+                        @include active {
+                            color: #fff;
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        @include absolute(0, 0);
+                        z-index: -1;
+                        @include size(100%, 100%);
+                        background: transparent;
+                        @include transition(background);
+                    }
+
+                    &.current::before {
+                        background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+                    }
+
+                    @include active {
+                        &::before {
+                            background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+                        }
+                    }
+                }
+
+                &:not(.parent) a,
+                &:not(.parent) span {
+                    @include active {
+                        background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+                    }
+                }
+
+                &.current:not(.parent) {
+                    a,
+                    > span {
+                        background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+                    }
+                }
+
+                a,
+                span {
+                    color: var(--M3-sys-dark-on-surface);
+                }
+            }
+
+            .submenu {
+                @include relative(0, 0);
+                @include size(100%);
+
+                background: var(--scrim, #000);
+
+                display: none;
+
+                margin-inline: -16px;
+                width: calc(100% + 16px * 2);
+                max-width: calc(100% + 16px * 2);
+
+                .item {
+                    width: 100%;
+                    z-index: 1;
+                    &.parent,
+                    &:not(.parent) > a,
+                    &:not(.parent) > span {
+                        padding: 8px 16px 10px 28px;
+                    }
+
+                    &.parent.active {
+                        @include fixed(var(--header-height), 0, 0, 0);
+                        background: var(--scrim, #000);
+
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+
+                        z-index: 10;
+                        margin-left: 0;
+                        transition-duration: 0s;
+                        gap: 0;
+                        padding: 8px 16px;
+
+                        @include active {
+                            &:has(.submenu:not(:hover)) {
+                                &::before {
+                                    background: var(
+                                        --primary-opacity-012,
+                                        rgba(208, 188, 255, 0.12)
+                                    );
+                                }
+                            }
+                        }
+
+                        & > :is(a, span) {
+                            align-items: center;
+                            height: 48px;
+                            gap: 4px;
+
+                            &::before {
+                                content: url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23a)"><path d="M32 23H19.83l5.59-5.59L24 16l-8 8 8 8 1.41-1.41L19.83 25H32z" fill="%23C3C8BB"/></g><defs><clipPath id="a"><rect x="4" y="4" width="40" height="40" rx="20" fill="%23fff"/></clipPath></defs></svg>');
+                                display: block;
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+
+                        & > a {
+                            @include active {
+                                color: var(--M3-sys-dark-on-surface);
+                            }
+                        }
+
+                        & > svg {
+                            display: none;
+                        }
+
+                        .submenu {
+                            overflow-y: auto;
+                            padding-top: 0;
+                            z-index: 0;
+                            flex: 1;
+                            margin-top: 8px;
+
+                            &::before {
+                                display: none;
+                            }
+
+                            .item {
+                                &.parent,
+                                &:not(.parent) > a,
+                                &:not(.parent) > span {
+                                    padding: 10px 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(.menu-active) {
+        .header__nav {
+            @include mediaMax($burger-max) {
+                display: none;
+            }
+        }
+    }
+
+    &.menu-active {
+        .header__burger {
+            &:before {
+                top: 23px;
+                transform: rotate(45deg);
+                transition:
+                    top 0.2s ease,
+                    transform 0.2s ease-out 0.2s;
+            }
+            span {
+                opacity: 0;
+            }
+            &::after {
+                bottom: 23px;
+                transform: rotate(-45deg);
+                transition:
+                    bottom 0.2s ease,
+                    transform 0.2s ease-out 0.2s;
+            }
+        }
+    }
+}

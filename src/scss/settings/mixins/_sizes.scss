@@ -1,0 +1,46 @@
+@mixin size($width: null, $height: null) {
+    @if $width != null {
+        width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+    }
+}
+
+@mixin sizeSvg($width: null, $height: null) {
+    @if $width != null {
+        width: $width;
+        min-width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+        min-height: $height;
+    }
+}
+
+@mixin minSize($width: null, $height: null) {
+    @if $width != null {
+        min-width: $width;
+    }
+
+    @if $height != null {
+        min-height: $height;
+    }
+}
+
+@mixin maxSize($width: null, $height: null) {
+    @if $width != null {
+        max-width: $width;
+    }
+
+    @if $height != null {
+        max-height: $height;
+    }
+}
+
+@mixin fixSize($width: null, $height: null) {
+    @include size($width, $height);
+    @include minSize($width, $height);
+}

@@ -1,0 +1,57 @@
+@use "../settings" as *;
+
+.breadcrumbs {
+    padding-block: 16px;
+    &__list {
+        @include size(max-content);
+        @include maxSize(100%);
+
+        @include flex(row, stretch, flex-start);
+        flex-wrap: wrap;
+
+        row-gap: 8px;
+    }
+
+    li {
+        @include relative();
+        @include flex(row, center, center, 8px);
+
+        &:not(:last-child) {
+            padding-right: 34px;
+        }
+
+        &:not(:last-child) {
+            &::after {
+                content: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.677 3 5.25 4.41 9.886 9 5.25 13.59 6.677 15l6.073-6z" fill="%2343483E"/></svg>');
+                @include absolute(50%, $right: 8px);
+                transform: translate(0, -50%);
+                @include size(18px, 18px);
+            }
+        }
+
+        &:last-child {
+            a,
+            span {
+                color: var(--primary, #7ade50);
+            }
+        }
+    }
+
+    a,
+    span {
+        @include relative;
+        @include flex(row, center, center);
+        color: var(--on-surface-variant, #c3c8bb);
+        @include transition(#{background, color});
+    }
+
+    a {
+        @include hover {
+            color: var(--on-surface, #e1e4d9);
+        }
+
+        @include focus {
+            color: var(--primary, #7ade50);
+        }
+    }
+}

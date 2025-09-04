@@ -1,0 +1,180 @@
+{
+    "tablev1": {
+        "thead": [
+            [
+                { "text": "#" },
+                { "text": "Teams", "className": "align-left" },
+                { "text": "Best Odds" },
+                { "text": "Probability" },
+                { "text": "P" },
+                { "text": "W" },
+                { "text": "L" },
+                { "text": "PTS" },
+                { "text": "NR" }
+            ]
+        ],
+        "tbody": [
+            [
+                { "text": "1" },
+                { "text": "Gujarat Titans", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "15.38%" },
+                { "text": "14" },
+                { "text": "10" },
+                { "text": "4" },
+                { "text": "20" },
+                { "text": "0.809" }
+            ],
+            [
+                { "text": "2" },
+                { "text": "Chennai Super Kings", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "16.67%" },
+                { "text": "15" },
+                { "text": "9" },
+                { "text": "3" },
+                { "text": "21" },
+                { "text": "0.867" }
+            ],
+            [
+                { "text": "3" },
+                { "text": "Lucknow Super Giants", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "11.76%" },
+                { "text": "11" },
+                { "text": "11" },
+                { "text": "4" },
+                { "text": "14" },
+                { "text": "0.801" }
+            ],
+            [
+                { "text": "4" },
+                { "text": "Mumbai Indians", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "16.67%" },
+                { "text": "9" },
+                { "text": "13" },
+                { "text": "2" },
+                { "text": "15" },
+                { "text": "0.789" }
+            ],
+            [
+                { "text": "5" },
+                { "text": "Rajasthan Royals", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "10.00%" },
+                { "text": "12" },
+                { "text": "15" },
+                { "text": "4" },
+                { "text": "16" },
+                { "text": "0.764" }
+            ],
+            [
+                { "text": "6" },
+                { "text": "Royal Challengers Bengaluru", "className": "align-left text-label" },
+                { "text": "<span class='table__odds'>6.50</span>" },
+                { "text": "11.76%" },
+                { "text": "13" },
+                { "text": "12" },
+                { "text": "3" },
+                { "text": "11" },
+                { "text": "0.643" }
+            ]
+        ]
+    },
+    "tablev2": {
+        "tbody": [
+            [
+                { "text": "1", "className": "text-label" },
+                {
+                    "className": "align-left",
+                    "text": "<div class='cell'><img src='img/circle-logo-1xbet.png' alt=''>1xBet</div>"
+                },
+                { "text": "120% up to ₹43,000" },
+                { "text": "<button class='btn sf-link btn--primary'>Visit</button>" }
+            ],
+            [
+                { "text": "2", "className": "text-label" },
+                {
+                    "className": "align-left",
+                    "text": "<div class='cell'><img src='img/circle-logo-parimatch.png' alt=''>Parimatch</div>"
+                },
+                { "text": "120% up to ₹43,000" },
+                { "text": "<button class='btn sf-link btn--primary'>Visit</button>" }
+            ],
+            [
+                { "text": "3", "className": "text-label" },
+                {
+                    "className": "align-left",
+                    "text": "<div class='cell'><img src='img/circle-logo-dafabet.png' alt=''>Dafabet</div>"
+                },
+                { "text": "120% up to ₹43,000" },
+                { "text": "<button class='btn sf-link btn--primary'>Visit</button>" }
+            ],
+            [
+                { "text": "4", "className": "text-label" },
+                {
+                    "className": "align-left",
+                    "text": "<div class='cell'><img src='img/circle-logo-rajabets.png' alt=''>Rajabets</div>"
+                },
+                { "text": "120% up to ₹43,000" },
+                { "text": "<button class='btn sf-link btn--primary'>Visit</button>" }
+            ],
+            [
+                { "text": "5", "className": "text-label" },
+                {
+                    "className": "align-left",
+                    "text": "<div class='cell'><img src='img/circle-logo-fun88.png' alt=''>Fun88</div>"
+                },
+                { "text": "120% up to ₹43,000" },
+                { "text": "<button class='btn sf-link btn--primary'>Visit</button>" }
+            ]
+        ]
+    },
+    "tablev3": {
+        "thead": [
+            [
+                { "text": "#", "className": "align-left" },
+                { "text": "Payment Method", "className": "align-left" },
+                { "text": "Minimum Withdrawal", "className": "align-left" }
+            ]
+        ],
+        "tbody": [
+            [
+                { "text": "1" },
+                { "text": "IMPS", "className": "align-left text-label" },
+                { "text": "Rs. 500" }
+            ],
+            [
+                { "text": "2" },
+                { "text": "AstroPay", "className": "align-left text-label" },
+                { "text": "Rs 700" }
+            ],
+            [
+                { "text": "3" },
+                { "text": "Mobiwik", "className": "align-left text-label" },
+                { "text": "Rs. 900" }
+            ],
+            [
+                { "text": "4" },
+                { "text": "Paytm", "className": "align-left text-label" },
+                { "text": "Rs. 500" }
+            ],
+            [
+                { "text": "5" },
+                { "text": "Skrill", "className": "align-left text-label" },
+                { "text": "Rs. 800" }
+            ],
+            [
+                { "text": "6" },
+                { "text": "Paytm", "className": "align-left text-label" },
+                { "text": "Rs. 900" }
+            ],
+            [
+                { "text": "7" },
+                { "text": "Bank Transfer", "className": "align-left text-label" },
+                { "text": "Rs. 1000" }
+            ]
+        ]
+    }
+}

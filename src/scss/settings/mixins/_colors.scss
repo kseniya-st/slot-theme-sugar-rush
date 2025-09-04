@@ -1,0 +1,60 @@
+@mixin bgGradient($gradient) {
+    background-image: $gradient;
+}
+
+@mixin colorA($color, $alpha: 1) {
+    color: rgba($color, $alpha);
+}
+
+@mixin bgColorA($color, $alpha: 1) {
+    background-color: rgba($color, $alpha);
+}
+
+@mixin linearGradient($angle: 0deg, $color1: null, $color2: null) {
+    @if $color1 != null and $color2 != null {
+        background: linear-gradient($angle, $color1, $color2);
+    }
+}
+
+@mixin textGradient($gradient: null) {
+    @if $gradient != null {
+        background: $gradient;
+    }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin borderGradientWithBg($size: 2px, $bg: #0f192a, $grad: linear-gradient(blue, red)) {
+    border: $size solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient($bg, $bg), $grad;
+}
+
+@mixin borderGradientNoBg($size: 2px, $radius: 8px, $bg: null) {
+    &::before {
+        content: "";
+        @include absolute(0, 0);
+        @include size(100%, 100%);
+
+        padding: $size;
+        border-radius: $radius;
+
+        @if $bg != null {
+            background: $bg;
+        }
+
+        background-size: 250% 100%;
+        background-position: 100% 0%;
+
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+}
+
+@mixin borderImg($width: 2px, $color: red, $type: solid, $radius: 50%) {
+    border-radius: $radius;
+    border: $width $type $color;
+    object-fit: cover;
+}

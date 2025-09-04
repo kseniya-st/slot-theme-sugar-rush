@@ -1,0 +1,7 @@
+//- @mixin
+mixin breadcrumbs(data)
+    nav.breadcrumbs.wrapper 
+        ul.breadcrumbs__list 
+            each item in data
+                li 
+                    a(href=item.link)= item.title                 

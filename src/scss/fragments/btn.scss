@@ -1,0 +1,169 @@
+@use "../settings" as *;
+
+.btn {
+    cursor: pointer;
+    overflow: hidden;
+    padding: 10px 24px;
+    border-radius: 8px;
+
+    @include transition(#{background, box-shadow, color, border-color});
+
+    @include relative;
+    @include flex(row, center, center, 8px);
+
+    @include size(max-content);
+    @include maxSize(100%);
+
+    background: transparent;
+
+    svg {
+        @include minSize(18px, 18px);
+        @include maxSize(24px, 48px);
+        path {
+            fill: currentColor;
+        }
+    }
+
+    &:has(svg) {
+        padding: 10px 16px;
+    }
+
+    &::after {
+        content: "";
+        @include absolute($all: 0px);
+        z-index: 2;
+        pointer-events: none;
+
+        @include transition(#{background});
+    }
+
+    &--primary {
+        background: var(--primary, #7ade50);
+        color: var(--on-primary, #0f3900);
+
+        @include hover {
+            box-shadow:
+                0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+            &::after {
+                background: var(--on-primary-opacity-008, rgba(56, 30, 114, 0.08));
+            }
+        }
+
+        @include activeFocus {
+            &::after {
+                background: var(--on-primary-opacity-012, rgba(56, 30, 114, 0.12));
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+            color: #e1e4d961;
+            &::after {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &--outlined {
+        border: 1px solid var(--outline, #8d9287);
+        color: var(--primary, #7ade50);
+        padding-block: 9px;
+
+        &:has(svg) {
+            padding-block: 9px;
+        }
+
+        @include hover {
+            &::after {
+                background: var(--primary-opacity-008, rgba(208, 188, 255, 0.08));
+            }
+        }
+
+        @include focus {
+            border-color: var(--primary, #7ade50);
+            &::after {
+                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+            }
+        }
+
+        @include active {
+            &::after {
+                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            border-color: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+            color: #e1e4d961;
+            &::after {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &--elevated {
+        color: var(--primary, #7ade50);
+        background: var(--surface-container-low, #191d17);
+        box-shadow:
+            0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+            0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+        @include hover {
+            box-shadow:
+                0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+            &::after {
+                background: var(--primary-opacity-008, rgba(208, 188, 255, 0.08));
+            }
+        }
+
+        @include activeFocus {
+            &::after {
+                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+            color: #e1e4d961;
+            &::after {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &--tonal {
+        background: var(--secondary-container, #374d2c);
+        color: var(--on-secondary-container, #d0ebbe);
+
+        @include hover {
+            box-shadow:
+                0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
+            &::after {
+                background: var(--on-secondary-container-opacity-008, rgba(232, 222, 248, 0.08));
+            }
+        }
+
+        @include activeFocus {
+            &::after {
+                background: var(--on-secondary-container-opacity-012, rgba(232, 222, 248, 0.12));
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
+            color: #e1e4d961;
+            &::after {
+                background-color: transparent;
+            }
+        }
+    }
+}

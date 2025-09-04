@@ -1,0 +1,70 @@
+@use "transitions" as *;
+
+@mixin hover() {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin activeFocus() {
+    &:active {
+        @content;
+    }
+
+    @media (any-hover: hover) {
+        &:focus {
+            @content;
+        }
+    }
+}
+
+@mixin hoverActiveFocus() {
+    &:active {
+        @content;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+        &:focus {
+            @content;
+        }
+    }
+}
+
+@mixin active {
+    &:active {
+        @content;
+    }
+}
+
+@mixin focus {
+    &:focus {
+        @content;
+    }
+}
+
+@mixin hoverActive() {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+    @media (any-hover: none) and (pointer: coarse) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+@mixin hoverOpacity {
+    @include transition(opacity);
+    @include hover {
+        opacity: 0.6;
+    }
+    @include activeFocus {
+        opacity: 0.6;
+    }
+}

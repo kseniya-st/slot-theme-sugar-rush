@@ -1,0 +1,58 @@
+@use "settings" as *;
+@use "normalize";
+@use "layout";
+@use "editor-content";
+@use "fonts";
+@use "form";
+
+.no-scroll {
+    overflow: hidden;
+}
+
+html {
+    font-size: var(--font-default);
+    @include default-scrollbar;
+}
+
+body {
+    background: var(--surface-dim, #11140f);
+    color: var(--on-surface, #e1e4d9);
+    overflow-x: hidden;
+
+    @include flex(column, stretch, flex-start);
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+table,
+.wp-block-table {
+    @include size(100%);
+    table-layout: auto;
+
+    border-spacing: 0;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+:root {
+    --offsets: 20px;
+    --width-container: 1440px;
+    --wrapper-margin: 32px;
+
+    --font-default: 18px;
+
+    --star-color: #fbbf24;
+    --star-bg: transparent;
+
+    @include media-max-sm {
+        --offsets: 16px;
+        --wrapper-margin: 28px;
+    }
+}

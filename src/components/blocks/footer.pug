@@ -1,0 +1,30 @@
+include /layouts/base.pug
+footer.footer.wrapper
+    nav.footer__nav 
+        each item in footerMenu 
+            ul.footer__nav-list 
+                for el in item
+                    li.footer__nav-item 
+                        if el.link
+                            a.footer__nav-link(href= el.link, class=`${el.class ? el.class : ""}`)= el.title
+                        else 
+                            span.footer__nav-link(href= el.link, class=`${el.class ? el.class : ""}`)= el.title
+    if footerLogos
+        ul.footer__logos    
+            each item in footerLogos 
+                li  
+                    img(src=`${item}`, alt="")
+    .footer__info 
+        p
+            span Responsible Gaming
+        p This website is intended for Australians living abroad or outside of Australia.
+        p Auscasinos has partnerships with many of the casinos presented on the website. We receive a referral commission from these when you click the link. All reviews and articles are unbiased and objective regardless of these agreements.
+    .footer__bottom 
+        if footerLinks 
+            ul.footer__links 
+                each item in footerLinks 
+                    li.footer__links-item 
+                        a.footer__links-link(href= item.link)= item.name
+        p.footer__copyright
+            img(src="img/18+.png" alt="") 
+            | Copyright © 2024. All right reserved

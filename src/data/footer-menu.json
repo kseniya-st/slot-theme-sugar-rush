@@ -1,0 +1,131 @@
+{
+    "footerMenu": [
+        [
+            {
+                "link": "#",
+                "title": "Casinos",
+                "class": "footer__nav-title"
+            },
+            {
+                "link": "#",
+                "title": "Online Casinos"
+            },
+            {
+                "link": "#",
+                "title": "No deposit Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Live Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Projects"
+            },
+            {
+                "link": "#",
+                "title": "New Casinos"
+            }
+        ],
+        [
+            {
+                "title": "Online Casinos",
+                "class": "footer__nav-title"
+            },
+            {
+                "link": "#",
+                "title": "StayCasino"
+            },
+            {
+                "link": "#",
+                "title": "Aviator"
+            },
+            {
+                "link": "#",
+                "title": "Slotman"
+            },
+            {
+                "link": "#",
+                "title": "PlayAmo"
+            }
+        ],
+        [
+            {
+                "link": "#",
+                "title": "Best Casino Bonuses",
+                "class": "footer__nav-title"
+            },
+            {
+                "link": "#",
+                "title": "Online Casinos"
+            },
+            {
+                "link": "#",
+                "title": "No deposit Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Live Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Projects"
+            },
+            {
+                "link": "#",
+                "title": "New Casinos"
+            }
+        ],
+        [
+            {
+                "link": "#",
+                "title": "Gambling Sites",
+                "class": "footer__nav-title"
+            },
+            {
+                "link": "#",
+                "title": "Online Casinos"
+            },
+            {
+                "link": "#",
+                "title": "No deposit Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Live Casinos"
+            },
+            {
+                "link": "#",
+                "title": "Projects"
+            },
+            {
+                "link": "#",
+                "title": "New Casinos"
+            }
+        ]
+    ],
+    "footerLogos": [
+        "img/footer-logo-1.png",
+        "img/footer-logo-2.png",
+        "img/footer-logo-3.png",
+        "img/footer-logo-4.png"
+    ],
+    "footerLinks": [
+        {
+            "name": "Problems",
+            "link": "#"
+        },
+        {
+            "name": "Privat Policy",
+            "link": "#"
+        },
+        {
+            "name": "Sitemap",
+            "link": "#"
+        },
+        {
+            "name": "FAQ",
+            "link": "#"
+        }
+    ]
+}

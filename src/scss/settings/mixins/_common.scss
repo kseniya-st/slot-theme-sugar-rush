@@ -1,0 +1,57 @@
+@use "./media" as *;
+
+@mixin rateStars($size: 24px, $sizeS: null) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    --percent: calc(var(--rating, 4.5) / 5 * 100%);
+
+    &::before,
+    &::after {
+        font-size: calc($size);
+        line-height: calc($size - 2px);
+        height: $size;
+        letter-spacing: 0px;
+    }
+
+    &::before {
+        content: "★★★★★";
+        display: block;
+
+        background: linear-gradient(
+            90deg,
+            var(--star-color) var(--percent),
+            var(--star-bg) var(--percent)
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        content: "☆☆☆☆☆";
+        display: block;
+
+        letter-spacing: 0px;
+        color: var(--star-color);
+    }
+
+    @if $sizeS != null {
+        @include media-max-sm {
+            &::before,
+            &::after {
+                font-size: calc($sizeS);
+                line-height: calc($sizeS - 2px);
+                height: $sizeS;
+                letter-spacing: 0px;
+            }
+        }
+    }
+}
