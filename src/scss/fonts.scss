@@ -1,16 +1,32 @@
 @font-face {
-  font-family: "Roboto";
+  font-family: "BalooTamma2";
   font-display: swap;
-  src: url("../../dist/fonts/Roboto-Regular.woff2") format("woff2"),url("../../dist/fonts/Roboto-Regular.woff") format("woff");
+  src: url("../../dist/fonts/BalooTamma2-Bold.woff2") format("woff2"),url("../../dist/fonts/BalooTamma2-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BalooTamma2";
+  font-display: swap;
+  src: url("../../dist/fonts/BalooTamma2-Medium.woff2") format("woff2"),url("../../dist/fonts/BalooTamma2-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BalooTamma2";
+  font-display: swap;
+  src: url("../../dist/fonts/BalooTamma2-Regular.woff2") format("woff2"),url("../../dist/fonts/BalooTamma2-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Staatliches";
+  font-family: "BalooTamma2";
   font-display: swap;
-  src: url("../../dist/fonts/Staatliches-Regular.woff2") format("woff2"),url("../../dist/fonts/Staatliches-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../../dist/fonts/BalooTamma2-SemiBold.woff2") format("woff2"),url("../../dist/fonts/BalooTamma2-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 

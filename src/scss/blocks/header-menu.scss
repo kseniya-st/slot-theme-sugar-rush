@@ -1,0 +1,346 @@
+@use "../settings" as *;
+
+.header-menu {
+    flex-wrap: wrap;
+    @include flex(row, center, flex-start, 24px);
+    $burger-max: $max-lg;
+    $burger-min: $min-lg;
+
+    @include mediaMax($burger-max) {
+        @include flex(column, stretch, flex-start, 8px);
+    }
+
+    ///////////////////////////////////////////////////////////////
+    //                     COMMON
+    ///////////////////////////////////////////////////////////////
+    .submenu {
+        @include flex(column, stretch, flex-start);
+        @include thin-v-scrollbar;
+    }
+
+    .item {
+        @include relative;
+        @include flex;
+        @include transition(background);
+
+        &.parent {
+            cursor: pointer;
+            gap: 12px;
+        }
+
+        a,
+        span {
+            @include flex(row, center);
+            @include transition(#{background, color});
+        }
+
+        svg {
+            @include transition(transform);
+            min-width: 20px;
+
+            path {
+                @include transition(fill);
+            }
+        }
+    }
+
+    a,
+    span {
+        color: var(--on-surface-on-surface-light, #fff);
+        @include font-label;
+    }
+
+    ///////////////////////////////////////////////////////////////
+    //                     DESKTOP
+    ///////////////////////////////////////////////////////////////
+
+    @include mediaMin($burger-min) {
+        // First Level Desktop Styles
+        align-items: stretch;
+        & > .item {
+            &.parent,
+            &:not(.parent) > a,
+            &:not(.parent) > span {
+                @include flex(row, center, center);
+
+                padding: 8px 16px;
+                min-width: 120px;
+
+                @include hover {
+                    background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                }
+
+                @include activeFocus {
+                    background: var(--states-focused, rgba(255, 255, 255, 0.12));
+                }
+            }
+
+            &.current {
+                &.parent,
+                &:not(.parent) > a,
+                &:not(.parent) > span {
+                    background: var(--states-focused, rgba(255, 255, 255, 0.12));
+                }
+            }
+
+            &.parent {
+                @include hover {
+                    & > svg {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+
+            @for $i from 1 through 50 {
+                &:nth-child(#{$i}) {
+                    z-index: calc(50 - $i);
+                }
+            }
+        }
+
+        // Common item styles
+        .item {
+            justify-content: space-between;
+        }
+
+        .item.parent {
+            &::before {
+                content: "";
+                @include size(100%, 16px);
+                @include absolute(100%, 0);
+                transform: translate(0, -4px);
+                display: none;
+            }
+
+            @include hover {
+                &::before {
+                    display: block;
+                }
+                & > .submenu {
+                    display: flex;
+                }
+            }
+        }
+
+        .item_left {
+            & > .submenu {
+                left: unset;
+                right: 0;
+                & > .item {
+                    flex-direction: row-reverse;
+                    & > a,
+                    & > span {
+                        flex-direction: row-reverse;
+                    }
+                }
+                & > .item.parent {
+                    & > svg {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .submenu {
+                    left: 0px;
+                    transform: translateX(-100%);
+                }
+            }
+        }
+
+        // Common submenu styles
+        .submenu {
+            width: 224px;
+
+            display: none;
+
+            padding-block: 8px;
+            border-radius: 4px;
+            background: var(
+                --surface-container-surface-container-transparent,
+                rgba(59, 28, 129, 0.8)
+            );
+
+            @include absolute(calc(100%), 0);
+
+            .submenu {
+                overflow-y: auto;
+                overflow-x: clip;
+                max-height: 300px;
+
+                top: -8px;
+                left: calc(100% - 1px);
+                transform: translateX(0);
+
+                @include thin-v-scrollbar-dark;
+            }
+
+            .item {
+                text-transform: none;
+
+                &.parent,
+                &:not(.parent) > a,
+                &:not(.parent) > span {
+                    padding: 12px;
+                    min-height: 40px;
+                    text-align: left;
+
+                    @include hover {
+                        background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                    }
+
+                    @include activeFocus {
+                        background: var(--states-focused, rgba(255, 255, 255, 0.12));
+                    }
+                }
+
+                &.parent {
+                    & > a {
+                        @include hover {
+                            color: var(--primary-primary-hover, #e9335d);
+                        }
+                        @include activeFocus {
+                            color: var(--primary-primary-focus, #ee3b64);
+                        }
+                    }
+                    & > svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                &:not(.parent) a,
+                &:not(.parent) span {
+                    @include size(100%);
+                }
+
+                &.current {
+                    &.parent,
+                    &:not(.parent) > a,
+                    &:not(.parent) > span {
+                        background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                    }
+                }
+            }
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////
+    //                     MOBILE
+    ///////////////////////////////////////////////////////////////
+
+    @include mediaMax($burger-max) {
+        padding: 8px 0;
+        & > .item.parent {
+            &.active {
+                padding-bottom: 0;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        // Common Item Styles
+        .item {
+            flex-wrap: wrap;
+
+            &.parent,
+            &:not(.parent) > a,
+            &:not(.parent) > span {
+                padding: 12px;
+                @include size(100%);
+                min-height: 48px;
+
+                @include hover {
+                    background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                }
+
+                @include activeFocus {
+                    background: var(--states-focused, rgba(255, 255, 255, 0.12));
+                }
+            }
+
+            svg {
+                margin-left: auto;
+                transform: rotate(-90deg);
+            }
+
+            &.parent.active {
+                @include fixed(var(--header-height), 0, 0, 0);
+                background: #42208b;
+
+                flex-direction: column;
+                flex-wrap: nowrap;
+
+                z-index: 10;
+                margin-left: 0;
+                transition-duration: 0s;
+                gap: 0;
+                padding: 16px;
+
+                @include active {
+                    &:has(.submenu:not(:hover)) {
+                        &::before {
+                            background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
+                        }
+                    }
+                }
+
+                & > :is(a, span) {
+                    position: relative;
+                    align-items: center;
+                    justify-content: center;
+                    height: 40px;
+                    font-size: rem(18);
+                    line-height: rem(24);
+                    text-align: center;
+
+                    padding-left: 56px;
+
+                    &::before {
+                        content: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m22.581 26.667 1.586-1.567-5.151-5.1 5.15-5.1-1.585-1.567L15.833 20z" fill="%23fff"/></svg>');
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                & > svg {
+                    display: none;
+                }
+
+                & > .submenu {
+                    display: flex;
+                    overflow-y: auto;
+                    padding-top: 0;
+                    z-index: 0;
+                    flex: 1;
+                    margin-top: 16px;
+                }
+            }
+
+            &.parent {
+                gap: 8px;
+
+                & > a,
+                & > span {
+                    max-width: calc(100% - 36px);
+                }
+            }
+
+            &.current:not(.parent) {
+                a,
+                > span {
+                    background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                }
+            }
+        }
+
+        .submenu {
+            @include relative(0, 0);
+            @include size(100%);
+            display: none;
+        }
+    }
+}

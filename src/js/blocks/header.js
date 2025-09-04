@@ -97,6 +97,7 @@ export class Header {
     }
 
     openMenu() {
+        window.scrollTo({ top: 0, left: 0 });
         this.header?.classList.add(MENU_ACTIVE_CLASS);
         document.body.classList.add(NO_SCROLL_CLASS);
     }

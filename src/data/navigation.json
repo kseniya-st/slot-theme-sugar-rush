@@ -1,278 +1,146 @@
 {
     "navigation": [
         {
-            "title": "Tips",
-            "link": "#"
-        },
-        {
-            "title": "Odds",
-            "link": "#"
-        },
-        {
-            "title": "Betting Apps",
-            "link": "/",
+            "title": "Casinos",
+            "link": "#",
             "submenu": [
                 {
-                    "title": "Online Casinos",
-                    "link": "/"
-                },
-                {
-                    "title": "No deposit Casinos",
-                    "link": "/"
-                },
-                {
-                    "title": "Online Casinos 2",
-                    "link": "/"
-                },
-                {
-                    "title": "No deposit Casinos 2",
-                    "link": "/"
-                },
-                {
-                    "title": "Live Casinos",
-                    "link": "/",
+                    "title": "Casinos 1",
+                    "link": "#",
                     "submenu": [
                         {
-                            "title": "StayCasino",
-                            "link": "/"
+                            "title": "Casinos 1-1",
+                            "link": "#"
                         },
                         {
-                            "title": "Aviator",
-                            "link": "/"
+                            "title": "Casinos 1-2",
+                            "link": "#"
                         },
                         {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
+                            "title": "Casinos 1-3",
+                            "link": "#"
                         }
                     ]
                 },
                 {
-                    "title": "New Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
+                    "title": "Casinos 2",
+                    "link": "#"
                 },
                 {
-                    "title": "Crypto Casinos",
-                    "link": "/",
+                    "title": "Casinos 3",
+                    "link": "#"
+                }
+            ]
+        },
+        {
+            "title": "How to Play",
+            "link": "#",
+            "submenu": [
+                {
+                    "title": "How to Play 1",
+                    "link": "#"
+                },
+                {
+                    "title": "How to Play 2",
+                    "link": "#"
+                },
+                {
+                    "title": "How to Play 3",
+                    "link": "#",
                     "submenu": [
                         {
-                            "title": "StayCasino",
-                            "link": "/"
+                            "title": "How to Play 4",
+                            "link": "#"
                         },
                         {
-                            "title": "Aviator",
-                            "link": "/"
+                            "title": "How to Play 5",
+                            "link": "#"
                         },
                         {
-                            "title": "Spin Samurai",
-                            "link": "/"
+                            "title": "How to Play 6",
+                            "link": "#"
                         },
                         {
-                            "title": "Slotman",
-                            "link": "/"
+                            "title": "How to Play 7",
+                            "link": "#"
                         },
                         {
-                            "title": "PlayAmo",
-                            "link": "/"
+                            "title": "How to Play 8",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 9",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 11",
+                            "link": "#"
                         }
                     ]
                 }
             ]
         },
         {
-            "title": "Online Casino",
+            "title": "Bonuses",
             "link": "#"
+        }
+    ],
+    "lang": [
+        {
+            "img": "argentina.png",
+            "text": "AR"
         },
         {
-            "title": "Betting Sites",
-            "link": "/",
-            "submenu": [
-                {
-                    "title": "Online Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
-                },
-                {
-                    "title": "No deposit Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
-                },
-                {
-                    "title": "Live Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
-                },
-                {
-                    "title": "New Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
-                },
-                {
-                    "title": "Crypto Casinos",
-                    "link": "/",
-                    "submenu": [
-                        {
-                            "title": "StayCasino",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Aviator",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Spin Samurai",
-                            "link": "/"
-                        },
-                        {
-                            "title": "Slotman",
-                            "link": "/"
-                        },
-                        {
-                            "title": "PlayAmo",
-                            "link": "/"
-                        }
-                    ]
-                }
-            ]
+            "img": "uganda.png",
+            "text": "UG"
         },
         {
-            "title": "Signup Guides",
-            "link": "/",
-            "submenu": [
-                {
-                    "title": "Signup Guide 1",
-                    "link": "/"
-                },
-                {
-                    "title": "Signup Guide 2",
-                    "link": "/"
-                },
-                {
-                    "title": "Signup Guide 3",
-                    "link": "/"
-                },
-                {
-                    "title": "Signup Guide 4",
-                    "link": "/"
-                }
-            ]
+            "img": "togo.png",
+            "text": "TG"
         },
         {
-            "title": "Betting Offers",
-            "link": "#"
+            "img": "tanzania.png",
+            "text": "TZ"
         }
     ]
 }

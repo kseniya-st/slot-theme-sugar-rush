@@ -10,17 +10,47 @@
 }
 
 html {
-    font-size: var(--font-default);
+    font:
+        400 var(--font-default) / 1.5 var(--ff-baloo-tamma),
+        sans-serif;
     @include default-scrollbar;
 }
 
 body {
-    background: var(--surface-dim, #11140f);
+    // background: var(--surface-dim, #11140f);
     color: var(--on-surface, #e1e4d9);
+    background-image:
+        url("/img/body-bg.png"),
+        linear-gradient(
+            180deg,
+            #c58fe2 0,
+            #c58fe2 93.75vw,
+            #8f74ef calc(93.75vw + 14.05%),
+            #8d74ef calc(93.75vw + 46.75%),
+            #7662ea calc(93.75vw + 100%)
+        );
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    // background-image:
+    //     url("/img/body-bg-mob.png"),
+    //     linear-gradient(
+    //         180deg,
+    //         #9567c0 0,
+    //         #9567c0 291.6vw,
+    //         #8f74ef calc(291.6vw + 14.05%),
+    //         #8d74ef calc(291.6vw + 46.75%),
+    //         #7662ea calc(291.6vw + 100%)
+    //     );
+
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+
     overflow-x: hidden;
 
     @include flex(column, stretch, flex-start);
     min-height: 100vh;
+    @include font-body;
 }
 
 main {
@@ -43,16 +73,82 @@ svg {
 
 :root {
     --offsets: 20px;
-    --width-container: 1440px;
-    --wrapper-margin: 32px;
+    --width-container: 1280px;
+    --wrapper-margin: 48px;
 
+    --ff-baloo-tamma: "BalooTamma2";
     --font-default: 18px;
 
-    --star-color: #fbbf24;
-    --star-bg: transparent;
+    --star-color: #ff8f4a;
+    --star-bg: var(--on-surface-on-surface-dark, #d3bcf7);
+
+    /* COLORS */
+    --surface-surface-bright: #6133b4;
+    --surface-surface: #542aa1;
+    --surface-container-surface-container: rgba(246 246 246 / 0.13);
+    --surface-container-surface-container-low: #2e1062;
+    --surface-container-surface-container-high: #9263e7;
+    --surface-container-surface-container-disabled: #513289;
+    --surface-container-on-surface-container-disabled: #876eb2;
+    --surface-container-surface-container-transparent: rgba(59 28 129 / 0.8);
+    --outline-outline: #503493;
+    --outline-outline-light: #6344ab;
+    --outline-outline-dark: #3d1581;
+    --on-surface-on-surface-dark: #d3bcf7;
+    --on-surface-on-surface: #ece8f2;
+    --on-surface-on-surface-light: #ffffff;
+    --primary-primary-hover: #ee1b99;
+    --primary-primary-focus: #f624a2;
+    --primary-on-primary-disabled: #bf72a0;
+    --primary-primary-disabled: #a13374;
+    --primary-on-primary: #ffffff;
+    --secondary-secondary: #1ec079;
+    --secondary-secondary-hover: #2cce87;
+    --secondary-secondary-focus: #32d88f;
+    --secondary-secondary-disabled: #347a59;
+    --secondary-on-secondary-disabled: #79c5a1;
+    --secondary-on-secondary: #ffffff;
+    --tertiary-tertiary: #f6b018;
+    --tertiary-tertiary-hover: #ffba25;
+    --tertiary-tertiary-focus: #ffc037;
+    --tertiary-tertiary-disabled: #9c7f3f;
+    --tertiary-on-tertiary: #393121;
+    --states-success: #64c5a6;
+    --states-on-success: #0e1a12;
+    --states-error: #d44161;
+    --states-on-error: #ffffff;
+    --states-warning: #e67e22;
+    --states-on-warning: #1a1410;
+    --states-hovered: rgba(255 255 255 / 0.08);
+    --states-focused: rgba(255 255 255 / 0.12);
+
+    /* GRADIENTS */
+    --surface-surface-dim-stop-1-color: #4e1e9d;
+    --surface-surface-dim-stop-1-position: 0%;
+    --surface-surface-dim-stop-2-color: #311b72;
+    --surface-surface-dim-stop-2-position: 100%;
+    --primary-primary-stop-1-color: #f2128d;
+    --primary-primary-stop-1-position: 0%;
+    --primary-primary-stop-2-color: #da1392;
+    --primary-primary-stop-2-position: 100%;
+
+    /* SHADOWS */
+    --shadow-dark-large: 7px 7px 0 0 #9a88ff;
+    --shadow-dark-small: 4px 4px 0 0 #9a88ff;
+    --primary-shadow: 3px 3px 0 0 #ffbba0;
+    --primary-shadow-hovered: 4px 4px 0 0 #ffbba0;
+    --secondary-shadow: 3px 3px 0 0 #b2ffdd;
+    --secondary-shadow-hovered: 4px 4px 0 0 #b2ffdd;
+    --tertiary-shadow: 3px 3px 0 0 #bf72ff;
+    --tertiary-shadow-hovered: 4px 4px 0 0 #bf72ff;
+    --elevated-shadow: 3px 3px 0 0 #ccaeff;
+    --elevated-shadow-hovered: 4px 4px 0 0 #ccaeff;
+    --selector-shadow: 3px 3px 0 0 #916ad9;
+    --outlined-shadow: 3px 3px 0 0 #ffffff;
+    --outlined-shadow-hovered: 4px 4px 0 0 #ffffff;
 
     @include media-max-sm {
         --offsets: 16px;
-        --wrapper-margin: 28px;
+        --wrapper-margin: 32px;
     }
 }

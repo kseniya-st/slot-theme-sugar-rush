@@ -1,0 +1,127 @@
+@use "../settings" as *;
+
+.lang {
+    cursor: pointer;
+    position: relative;
+    z-index: $z-index-lang;
+
+    border-radius: 12px;
+    background: var(--surface-container-surface-container, rgba(246, 246, 246, 0.13));
+
+    padding: 10px;
+    @include flex(row, center, center, 8px);
+
+    color: var(--on-surface-on-surface-light, #fff);
+
+    @include transition(#{background});
+    @include font-label;
+
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: transparent;
+        border-radius: 12px;
+        @include transition(background);
+    }
+
+    @include hoverActiveFocus {
+        &::after {
+            background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+        }
+    }
+
+    img {
+        width: 36px;
+        height: 24px;
+        min-width: 36px;
+        object-fit: cover;
+    }
+
+    svg {
+        min-width: 16px;
+        @include transition(transform);
+    }
+
+    &.active {
+        border-radius: 12px 12px 0 0;
+
+        &::after {
+            border-radius: 12px 12px 0 0;
+            background: var(--surface-container-surface-container, rgba(246, 246, 246, 0.12));
+        }
+        .lang__list {
+            display: flex;
+        }
+        & > svg {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__list {
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 300px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        border-radius: 0 0 12px 12px;
+        background: var(--surface-container-surface-container, rgba(246, 246, 246, 0.13));
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+
+        @include flex(column, stretch, flex-start, 0);
+        display: none;
+
+        @include thin-v-scrollbar;
+    }
+
+    &__item {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid #503493;
+    }
+
+    &__link {
+        width: 100%;
+        padding: 10px;
+
+        @include flex(row, center, flex-start, 8px);
+        @include transition(#{background, color});
+
+        @include hoverActive {
+            background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+        }
+        @include activeFocus {
+            background: var(--states-focused, rgba(255, 255, 255, 0.12));
+        }
+    }
+
+    @include media-max-sm {
+        padding: 12px;
+
+        span {
+            display: none;
+        }
+
+        img {
+            width: 26px;
+            height: 18px;
+            min-width: 26px;
+        }
+
+        &__link {
+            padding: 12px;
+        }
+    }
+}
