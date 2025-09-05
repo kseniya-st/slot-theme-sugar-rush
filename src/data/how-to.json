@@ -3,13 +3,7 @@
         {
             "title":"Open 1win com",
             "descr":"If you registered through a social network, select this 1win login option. Otherwise, enter your email/phone number and password.",
-            "img":"how-to-img-1.png",
-            "btns":[
-                {
-                    "modificator":"btn--primary",
-                    "text":"Read more"
-                }
-            ]
+            "img":"how-to-img-1.png"
         },
         {
             "title":"Click on the “Login” button",

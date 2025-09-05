@@ -154,10 +154,7 @@
 
             padding-block: 8px;
             border-radius: 4px;
-            background: var(
-                --surface-container-surface-container-transparent,
-                rgba(59, 28, 129, 0.8)
-            );
+            background: rgba(59, 28, 129, 1);
 
             @include absolute(calc(100%), 0);
 

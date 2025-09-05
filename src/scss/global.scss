@@ -25,7 +25,7 @@ body {
     @include flex(column, stretch, flex-start);
     min-height: 100vh;
 
-    --bg-img: url("img/test.png");
+    --bg-img: url("/img/body-bg.webp");
     &::before {
         content: "";
         top: 0;
@@ -70,7 +70,7 @@ body {
 
     @include media-max-sm {
         &::before {
-            background-image: url("/img/body-bg-mob.png");
+            background-image: url("/img/body-bg-mob.webp");
         }
         background-image: linear-gradient(
             180deg,
