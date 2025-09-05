@@ -1,0 +1,17 @@
+//- @defaultData = slotCards[0]
+//- @mixin
+include /components/fragments/button.pug
+include /mixins/icons.pug
+mixin slotCard(item)
+    li.slot-card
+        img(src=`img/${item.img}` alt="")
+        .slot-card__wrap 
+            .slot-card__info
+                p.slot-card__name= item.name
+                p.slot-card__win
+                    span Max Win:
+                    | #{item.win}
+            button.slot-card__btn.js-modal__open(data-modal-title="Sugar Rush" data-modal-url="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vs20sugarrush&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=EN&cur=USD") 
+                span.slot-card__btn-icon 
+                | Play demo 
+

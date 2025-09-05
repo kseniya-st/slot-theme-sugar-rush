@@ -1,0 +1,64 @@
+@use "../settings" as *;
+
+.info-table {
+    position: relative;
+    margin-top: 16px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__tbody {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 24px;
+    }
+
+    &__row {
+        @include flex(row, center, space-between, 16px);
+    }
+
+    &__cell {
+        color: var(--on-surface-on-surface-dark, #d3bcf7);
+
+        &:first-child {
+            font-weight: 600;
+            color: var(--on-surface-on-surface, #ece8f2);
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    &__rating {
+        @include rateStarsOne(24px, 18px);
+
+        span {
+            color: var(--tertiary-tertiary, #f6b018);
+            text-align: center;
+            line-height: 1;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+    }
+
+    @include media-max-sm {
+        &__tbody {
+            gap: 16px 8px;
+        }
+
+        &__row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        &__cell {
+            &:last-child {
+                text-align: left;
+            }
+        }
+    }
+}

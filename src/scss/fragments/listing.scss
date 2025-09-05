@@ -1,0 +1,158 @@
+@use "../settings" as *;
+
+.listing {
+    margin-top: 24px;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__list {
+        @include flex(column, stretch, flex-start, 24px);
+    }
+
+    &__row {
+        width: 100%;
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+
+        &-wrap {
+            position: relative;
+            width: 100%;
+            padding: 13px 13px 13px 136px;
+            border-radius: 32px;
+            border: 3px solid var(--surface-container-surface-container-high, #9263e7);
+            background: var(--surface-container-surface-container-low, #2e1062);
+            @include flex(row, center, flex-start, 16px);
+            flex-wrap: wrap;
+
+            & > img,
+            & > svg {
+                width: 180px;
+                height: 68px;
+                border-radius: 16px;
+                object-fit: cover;
+            }
+        }
+
+        &-place {
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            height: calc(100% + 3px * 2);
+            width: 104px;
+            border-radius: 32px 0 0 32px;
+            background: var(--secondary-secondary, #1ec079);
+
+            @include flex(row, center, center);
+            color: var(--primary-on-primary, #fff);
+            text-align: center;
+            @include font-h2;
+        }
+
+        .btn {
+            margin-left: auto;
+            width: 255px;
+            max-width: 100%;
+        }
+
+        &-best {
+            margin-left: 104px;
+            padding: 8px 24px;
+            border-radius: 0 0 32px 32px;
+            background: var(--secondary-secondary, #1ec079);
+            @include flex(row, center, center, 10px);
+            @include font-label;
+
+            img,
+            svg {
+                max-width: 30px;
+                max-height: 30px;
+                object-fit: contain;
+                color: var(--on-surface-on-surface-light, #fff);
+                text-align: center;
+                margin-top: -3px;
+            }
+        }
+
+        &-bonus {
+            @include flex(row, center, flex-start, 8px);
+            color: var(--on-surface-on-surface, #ece8f2);
+            @include font-title;
+
+            img,
+            svg {
+                margin-top: -4px;
+                max-width: 44px;
+                max-height: 44px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    @include media-max-md {
+        &__item {
+            padding-left: 104px;
+            &-wrap {
+                padding: 16px;
+                border-color: var(--secondary-secondary, #1ec079);
+                border-radius: 0 32px 32px 32px;
+            }
+            &-place {
+                height: 100px;
+                transform: translateX(-100%);
+            }
+            &-best {
+                margin-inline: auto;
+            }
+
+            &-bonus {
+                max-width: calc(100% - 180px - 16px);
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    @include media-max-sm {
+        margin-top: 20px;
+        &__list {
+            gap: 16px;
+        }
+        &__item {
+            padding-left: 48px;
+
+            &-wrap {
+                padding: 13px 9px;
+
+                & > img,
+                & > svg {
+                    width: 78px;
+                    height: 48px;
+                }
+            }
+
+            &-bonus {
+                max-width: calc(100% - 78px - 16px);
+                @include font-label;
+
+                img,
+                svg {
+                    max-width: 32px;
+                    max-height: 32px;
+                }
+            }
+
+            &-place {
+                width: 48px;
+                height: 64px;
+            }
+        }
+    }
+}

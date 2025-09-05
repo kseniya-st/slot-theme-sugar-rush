@@ -1,0 +1,34 @@
+{
+    "slotCards": [
+        {
+            "img":"slot1.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        },
+        {
+            "img":"slot2.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        },
+        {
+            "img":"slot3.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        },
+        {
+            "img":"slot4.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        },
+        {
+            "img":"slot5.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        },
+        {
+            "img":"slot6.png",
+            "name":"Bonanza Slot",
+            "win": "$1980"
+        }
+    ]
+}

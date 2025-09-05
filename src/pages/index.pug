@@ -3,18 +3,116 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
     title main page
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css")
     link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
     link(rel="stylesheet",  href=cssPath)
-    body
-        
+    body(style="--bg-img: url('/img/body-bg.png');")
+
         include /layouts/base.pug
-        include ../components/blocks/header.pug
+        include /components/blocks/header.pug
 
         main
+            include /components/blocks/section-hero.pug
+
+            section.wrapper.bg-block.cols.cols--fixed 
+                .cols__item 
+                    h3 Screenshots and video
+                    +gallery(gallery)
+                .cols__item
+                    h3 About Doh House Megaways
+                    include /components/fragments/info-table.pug
+
+            section.wrapper.bg-block 
+                h2 Most Popular Free Slots
+                ul.grid-block.grid-block--3
+                    each card in slotCards 
+                        +slotCard(card)
+
+            section.wrapper.bg-block 
+                h2 Betting Function
+                .cols 
+                    .cols__item 
+                        p After making profits, you can take them with the “Take ” button, or bet them in a special game by pressing the “Risk ” button.
+                        p In this Fruit Cocktail game, you have to choose one of the 4 cards face down. If it is greater than of the dealer, the player doubles his winnings. If it's the same, you can play again (or fold), and if it is lower, the player loses everything. If the player wins, he can continue playing e try to double your earnings again.
+                        p Fruit Cocktail payments and returns
+                        p This slot machine offers a 95% return rate to the player, slightly lower than the sector average. Fruit cocktail icon provides reward more substantial, reaching up to 5000 credits, followed by the wild card with until 2000. 
+                        p Various fruits such as watermelon, pear, apple and lemon award minor prizes in descending order. It is important to note that, although these values are shown in the free version, they only have economic relevance when betting with real funds, since in test mode credits have no monetary value.
+                    include /components/fragments/toc-section.pug
+
+            section.wrapper.bg-block  
+                h2 Pixies of the Forest Slot Game Bonuses
+                +table(table, true)
+
+            section.wrapper.bg-block  
+                h2 Best Casino Bonuses
+                +table(table1, true)
+
+            section.wrapper.bg-block  
+                h2 Pros and Cons
+                p 40 Super Hot is a slot offering 40 different winning opportunites. While the winning spins may happen not that often, when they do, you’ll almost certainly win a large reward.
+                +prosCons(prosCons)
+
+            section.wrapper.bg-block 
+                h2 Betting Function
+                p After making profits, you can take them with the “Take ” button, or bet them in a special game by pressing the “Risk ” button.
+                p In this Fruit Cocktail game, you have to choose one of the 4 cards face down. If it is greater than of the dealer, the player doubles his winnings. If it's the same, you can play again (or fold), and if it is lower, the player loses everything. If the player wins, he can continue playing e try to double your earnings again.
+                p Fruit Cocktail payments and returns
+                p This slot machine offers a 95% return rate to the player, slightly lower than the sector average. Fruit cocktail icon provides reward more substantial, reaching up to 5000 credits, followed by the wild card with until 2000. 
+                p Various fruits such as watermelon, pear, apple and lemon award minor prizes in descending order. It is important to note that, although these values are shown in the free version, they only have economic relevance when betting with real funds, since in test mode credits have no monetary value.
+
+            section.wrapper.bg-block  
+                h2 Paytable
+                p The symbols payout range from matching 5 symbols to 15+ and the paytable for Sugar Rush is available below based on a bet of 1 unit:
+                +table(table2, true)
+
+            section.wrapper 
+                .bg-block 
+                    h2 Top 10 Indian Casinos to Play Bustabit
+                    p Local players flock to crypto gambling spots daily for thrilling price prediction action. Our experts sized up trusted Bustabit game sites through rigorous testing. Check out this ranked list of reliable operators, ranked by bonus offers, payment flexibility, and rupee support.
+                include /components/fragments/listing.pug
+
+            section.wrapper.bg-block 
+                h2 Betting Function
+                .content-img
+                    .content-img__content 
+                        p After making profits, you can take them with the “Take ” button, or bet them in a special game by pressing the “Risk ” button.
+                        p In this Fruit Cocktail game, you have to choose one of the 4 cards face down. If it is greater than of the dealer, the player doubles his winnings. If it's the same, you can play again (or fold), and if it is lower, the player loses everything. If the player wins, he can continue playing e try to double your earnings again.
+                        p Fruit Cocktail payments and returns
+                        p This slot machine offers a 95% return rate to the player, slightly lower than the sector average. Fruit cocktail icon provides reward more substantial, reaching up to 5000 credits, followed by the wild card with until 2000. 
+                        p Various fruits such as watermelon, pear, apple and lemon award minor prizes in descending order. It is important to note that, although these values are shown in the free version, they only have economic relevance when betting with real funds, since in test mode credits have no monetary value.
+                    img(src="img/content-img.png", alt="")
+
+            section.wrapper.bg-block 
+                h2 Online Gambling Laws & Regulations in Australia
+                p Alternatively, you can also access a newcomer bonus by clicking on the "Welcome Package. Casino" banner on our homepage.
+                    br
+                    | Remember, each part of this offer is valid for 7 days from the day the bonus funds are credited. During this time, you must meet the x40 wagering requirements by playing casino games with odds of at least x1.90. If successful, you can proceed to make the second and third deposits to claim corresponding rewards.
+                p Here's a breakdown of the casino welcome bonus values:
+                ul 
+                    li The first casino welcome bonus is 75% (up to €200) + €5 FB;
+                    li The second casino welcome bonus is 50% (up to €300) + €5 FB;
+                    li The third casino welcome bonus is 75% (up to €500) + €5 FB.
+                p Additionally, take advantage of other promotions, such as:
+                ul 
+                    li "Monday Live Reload" for a 25% Live Casino Bonus (up to €200) credited every Monday with a minimum €20 deposit and playing any live casino game;
+                    li "100 Lucky Free Spins" credited on Wednesdays for a minimum €50 deposit;
+                    li "Friday Reload" offering 30% (up to €200) of your deposit for gambling on Fridays, with x40 wagering requirements to be met within 3 days for withdrawing winnings.
+
+            section.wrapper.bg-block 
+                h2 Big Bamboo tips, tricks and strategies
+                p Since the Big Bamboo game is quite complex, trying it before betting is basic. Something for which we remind you that you have a version to play Big Bamboo online on our website.
+                p Regarding the strategy, we have three tips for you:
+                ol 
+                    li Bet with adjusted figures, so that your balance allows you to play over 500 games. 
+                    li When betting or not the free spins you get, given the risk that this entails, to the long it is better not to.
+                    li Regarding the improved bet, since it only increases the RTP by 0.5%, it is not worth it.
+        
+            section.wrapper.bg-block 
+                h2 How to
+                +howTo(howTo)
+            
             section.wrapper
-                h2 Today IPL Match Prediction
-                include ../components/fragments/button.pug
-                +button('btn--outlined', 'Test')
+                include /components/fragments/author-block.pug
 
             include ../components/blocks/section-faq.pug 
 
@@ -23,5 +121,6 @@ html(lang="en")
         include ../components/fragments/mob-btn.pug
         +mobBtn(mobBtn)
 
+        script(src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js")
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
         script(src=jsPath, type=jsType ? 'module' : undefined)

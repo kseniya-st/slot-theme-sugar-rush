@@ -1,0 +1,125 @@
+@use "../settings" as *;
+
+.slot-card {
+    max-width: 100%;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 8px;
+
+    @include flex(row, flex-end, flex-start);
+    min-height: 230px;
+
+    & > img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 2;
+        width: 288px;
+        max-width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        background: rgba(19, 13, 34, 0.84);
+
+        @include flex(row, center, space-between, 8px);
+    }
+
+    &__info {
+        @include flex(column, flex-start, center, 12px);
+    }
+
+    &__name {
+        color: var(--on-surface-on-surface-light, #fff);
+        @include font-title;
+    }
+
+    &__win {
+        color: var(--tertiary-tertiary, #f6b018);
+        @include font-label;
+
+        span {
+            background: linear-gradient(to bottom, #f9d76e 0%, #e9b32a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            margin-right: 3px;
+        }
+    }
+
+    &__btn {
+        @include flex(column, center, center, 2px);
+        background: transparent;
+        color: var(--on-surface-on-surface-light, #fff);
+        text-align: center;
+        @include font-body;
+
+        &-icon {
+            position: relative;
+            overflow: hidden;
+            @include flex(row, center, center);
+            width: 47px;
+            height: 47px;
+            border-radius: 16px;
+            border: 1px solid var(--tertiary-tertiary, #f6b018);
+            background: radial-gradient(50% 50% at 50% 50%, #f56f39 29.01%, #e4571e 100%);
+            &::after {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none"><path d="M10.839 5.908a2 2 0 0 1 0 3.403l-7.476 4.617c-1.332.823-3.05-.135-3.05-1.702V2.992c0-1.566 1.718-2.524 3.05-1.701z" fill="%23fff"/></svg>');
+                width: 12px;
+                height: 15px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                @include transition(background);
+            }
+        }
+
+        @include hover {
+            .slot-card__btn-icon {
+                &::before {
+                    background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+                }
+            }
+        }
+
+        @include activeFocus {
+            .slot-card__btn-icon {
+                &::before {
+                    background: var(--states-focused, rgba(255, 255, 255, 0.12));
+                }
+            }
+        }
+    }
+
+    @include media-max-sm {
+        min-height: 200px;
+
+        &__btn {
+            &-icon {
+                width: 41px;
+                height: 41px;
+
+                &::after {
+                    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none"><path d="M9.808 3.955a2 2 0 0 1 0 3.403L3.926 10.99c-1.332.822-3.051-.136-3.051-1.702V2.024C.875.457 2.594-.501 3.926.322z" fill="%23fff"/></svg>');
+                    width: 11px;
+                    height: 12px;
+                }
+            }
+        }
+        &__wrap {
+            width: 274px;
+        }
+    }
+}

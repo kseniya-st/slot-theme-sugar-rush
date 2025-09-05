@@ -2,149 +2,165 @@
 
 .footer {
     position: relative;
-    padding-block: 64px 80px;
-    @include flex(column, flex-start, flex-start, 32px);
+    padding: 32px;
+    @include flex(column, flex-start, flex-start, 24px);
 
-    max-width: calc(1360px - var(--offsets, 20px) * 2);
-
-    @include media-max-lg {
-        background: var(--scrim, #000);
+    &.wrapper {
+        margin-block: 48px;
     }
 
-    @include media-max-sm {
-        gap: 28px;
-        padding-block: 56px;
-    }
+    &__row {
+        position: relative;
+        width: 100%;
+        @include flex(row, center, flex-start);
+        gap: 20px 64px;
+        padding-bottom: 24px;
 
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: calc((100vw - 100%) / -2);
-        top: 0;
-        height: 100%;
-        width: calc(100vw);
-        background: var(--scrim, #000);
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #503493;
+        }
 
-        @include media-max-lg {
-            display: none;
+        &--copyright {
+            gap: 16px;
+            align-items: center;
+            padding-block: 24px 0;
+
+            &::after {
+                top: 0;
+                bottom: unset;
+            }
         }
     }
 
     &__nav {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-
-        @include media-max-mlg {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include media-max-sm {
-            grid-template-columns: 1fr;
-            flex-direction: column;
-        }
+        flex: 1;
 
         &-list {
-            @include flex(column, flex-start, flex-start, 16px);
+            width: 100%;
+            @include flex(row, center, flex-start);
+            flex-wrap: wrap;
+            gap: 20px 64px;
 
             a {
+                color: var(--on-surface-on-surface-light, #fff);
+                text-align: center;
                 @include transition(color);
 
                 @include hover {
-                    color: var(--on-surface, #e1e4d9);
+                    color: var(--tertiary-tertiary-hover, #ffba25);
                 }
 
                 @include activeFocus {
-                    color: var(--primary, #7ade50);
+                    color: var(--tertiary-tertiary-focus, #ffc037);
                 }
             }
         }
 
-        &-title {
-            color: var(--M3-white, #fff);
+        &-item,
+        &-link {
+            text-align: center;
         }
     }
 
     &__logos {
-        @include flex(row, center, space-between, 16px);
+        @include flex(row, center, flex-start, 20px);
+        flex-wrap: wrap;
+
+        img,
+        svg {
+            @include maxSize(100%, 48px);
+            object-fit: contain;
+        }
+    }
+
+    &__flags {
+        @include flex(row, center, flex-start, 24px);
         flex-wrap: wrap;
 
         li {
-            max-width: 100%;
+            max-width: 32px;
+            max-height: 23px;
+            @include flex(row, center, center);
         }
 
         img,
         svg {
             max-width: 100%;
-            max-height: 32px;
-        }
-
-        @include media-max-sm {
-            justify-content: flex-start;
+            max-height: 100%;
         }
     }
 
-    &__logos,
-    &__info,
-    &__bottom {
-        width: 100%;
-        padding-top: 32px;
-        border-top: 1px solid #43483e;
+    &__logo {
+        display: flex;
 
-        @include media-max-sm {
-            padding-top: 28px;
+        &:is(a) {
+            @include hoverOpacity;
         }
-    }
 
-    &__info {
-        text-align: left;
-        color: var(--M3-sys-dark-outline, #8d9287);
-
-        span {
-            color: var(--M3-white, #fff);
-        }
-    }
-
-    &__bottom {
-        @include flex(row, flex-end, space-between, 28px);
-        flex-wrap: wrap-reverse;
-
-        @include media-max-sm {
-        }
-    }
-
-    &__links {
-        @include flex(row, center, flex-start, 20px);
-        row-gap: 8px;
-        flex-wrap: wrap;
-
-        a {
-            color: var(--on-surface-variant, #c3c8bb);
-            @include transition(color);
-
-            @include hover {
-                color: var(--on-surface, #e1e4d9);
-            }
-
-            @include activeFocus {
-                color: var(--primary, #7ade50);
-            }
+        img,
+        svg {
+            @include maxSize(100%, 100px);
+            object-fit: contain;
         }
     }
 
     &__copyright {
-        @include flex(row, center, flex-start, 20px);
-        color: var(--on-surface-variant, #c3c8bb);
+        color: var(--on-surface-on-surface-light, #fff);
+        text-align: right;
+        margin-left: auto;
+    }
 
-        img,
-        svg {
-            @include maxSize(32px, 32px);
+    @include media-max-mlg {
+        &__row {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &--copyright {
+                gap: 16px;
+                flex-direction: column-reverse;
+            }
         }
 
-        @include media-max-sm {
+        &__copyright {
+            margin-left: 0;
+        }
+    }
+
+    @include media-max-md {
+        &__nav-list {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @include media-max-sm {
+        &.wrapper {
+            margin-block: 32px;
+        }
+
+        &__copyright {
+            @include font-body-small;
+        }
+        &__logos {
             gap: 16px;
+            img,
+            svg {
+                max-height: 32px;
+            }
+        }
+        &__flags {
+            gap: 8px;
+            li {
+                max-width: 24px;
+                max-height: 17px;
+            }
         }
     }
 }

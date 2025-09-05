@@ -1,60 +1,68 @@
 @use "../settings" as *;
 
 .section-faq {
-    display: grid;
-    grid-template-columns: 1fr 588px;
-    column-gap: 20px;
-    row-gap: 32px;
-
-    @include media-max-lg {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @include media-max-mlg {
-        grid-template-columns: 1fr;
-    }
-
-    @include media-max-sm {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 28px;
-    }
-
     &__list {
-        @include flex(column, stretch, flex-start, 8px);
-        flex: 1;
+        width: 100%;
+        columns: 2;
     }
 
     &__item {
         @include relative();
-        &:not(:first-child) {
-            border-top: 1px solid #43483e;
+        width: 100%;
+        margin-top: 16px;
+        border-radius: 16px;
+        background: var(--surface-container-surface-container-low, #2e1062);
+        overflow: hidden;
+        break-inside: avoid;
+
+        &:first-child {
+            margin-top: 0;
         }
 
         p {
-            margin-block: 8px;
+            margin: 16px;
+            color: var(--on-surface-on-surface, #ece8f2);
         }
 
         &[open] {
             summary {
-                svg {
-                    transform: translate(0, -50%) rotate(-180deg);
+                .section-faq__item-arrow::after {
+                    transform: rotate(-180deg);
                 }
+            }
+        }
+
+        &-arrow {
+            @include flex(row, center, center);
+            width: 36px;
+            height: 36px;
+            padding: 8px;
+            margin: 2px;
+            border-radius: var(--border-radius-radius-medium, 12px);
+            border: 1px solid var(--on-surface-on-surface-dark, #d3bcf7);
+            @include transition(background);
+
+            &::after {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="m16.668 7.419-1.567-1.586-5.1 5.151-5.1-5.15-1.566 1.585L10 14.167z" fill="%23fff"/></svg>');
+                width: 20px;
+                height: 20px;
+                display: block;
+                transform-origin: center;
+                @include transition(transform);
             }
         }
     }
 
     summary {
         @include relative();
-        @include flex(row, center, space-between, 8px);
-        min-height: 64px;
+        @include flex(row, center, space-between, 24px);
+        min-height: 72px;
 
-        padding: 8px 0;
-        padding-right: 48px;
-
+        padding: 16px;
         cursor: pointer;
-
         list-style: none;
+
+        @include transition(background);
 
         &::marker {
             content: "";
@@ -64,51 +72,44 @@
             display: none;
         }
 
-        &::after {
-            content: "";
-            @include absolute(50%, $right: 4px);
-
-            transform: translate(0, -50%);
-            @include size(40px, 40px);
-
-            border-radius: 50%;
-            pointer-events: none;
-
-            @include transition(background);
-        }
+        color: var(--on-surface-on-surface-light, #fff);
+        @include font-label;
 
         @include hover {
-            &::after {
-                background: var(--on-surface-variant-opacity-008, rgba(202, 196, 208, 0.08));
+            .section-faq__item-arrow {
+                background: var(--states-hovered, rgba(255, 255, 255, 0.08));
             }
         }
 
         @include active {
-            &::after {
-                background: var(--on-surface-variant-opacity-012, rgba(202, 196, 208, 0.12));
+            .section-faq__item-arrow {
+                background: var(--states-focused, rgba(255, 255, 255, 0.12));
             }
-        }
-
-        svg {
-            @include absolute(50%, $right: 0);
-            transform: translate(0, -50%);
-
-            @include minSize(48px, 48px);
-            @include size(48px, 48px);
-            @include transition(transform);
-        }
-
-        @include media-max-sm {
-            padding-block: 0;
-            min-height: 48px;
         }
     }
 
-    .join-form {
-        margin-top: 59px;
+    .author-block {
+        margin: 0;
+        flex: 0.4324;
+    }
 
-        @include media-max-mlg {
+    @include media-max-mlg {
+        &__list {
+            @include flex(column, stretch, flex-start, 16px);
+        }
+
+        &__item {
             margin-top: 0;
+        }
+    }
+
+    @include media-max-sm {
+        &__list {
+            gap: 8px;
+        }
+        summary {
+            padding: 8px 16px;
+            min-height: 56px;
         }
     }
 }

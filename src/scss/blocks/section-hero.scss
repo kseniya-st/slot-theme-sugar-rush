@@ -1,0 +1,98 @@
+@use "../settings" as *;
+
+.section-hero {
+    margin-block: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    &__demo {
+        position: relative;
+        min-height: 368px;
+        width: 100%;
+        border-radius: 48px;
+        padding: 20px;
+        border: 12px solid var(--surface-container-surface-container-low, #2e1062);
+        overflow: hidden;
+
+        background-size: cover;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(33, 19, 58, 0.7);
+        }
+
+        @include flex(row, center, center);
+
+        &-col {
+            position: relative;
+            z-index: 1;
+            @include flex(column, stretch, center, 8px);
+        }
+
+        &-logo {
+            max-width: 260px;
+            @include flex(row, center, flex-start, 8px);
+
+            color: var(--on-surface-on-surface-light, #fff);
+
+            b {
+                font-weight: 600;
+            }
+
+            img,
+            svg {
+                border-radius: 12px;
+                width: 106px;
+                height: 48px;
+                object-fit: cover;
+            }
+        }
+
+        &-btns {
+            flex: 1;
+            @include flex(column, stretch, flex-start, 24px);
+            flex-wrap: wrap;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    @include media-max-mlg {
+        grid-template-columns: 1fr;
+    }
+
+    @include media-max-sm {
+        gap: 0;
+
+        &__content {
+            display: contents;
+        }
+
+        h1 {
+            order: -2;
+        }
+
+        &__demo {
+            order: -1;
+            min-height: 268px;
+            border-width: 10px;
+
+            &-logo {
+                img,
+                svg {
+                    width: 84px;
+                    height: 48px;
+                }
+            }
+        }
+
+        &__btns {
+            gap: 16px;
+        }
+    }
+}

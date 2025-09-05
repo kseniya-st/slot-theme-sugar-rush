@@ -1,0 +1,13 @@
+//- @defaultData = gallery
+//- @mixin
+mixin gallery(gallery)
+    ul.gallery.js-scroll-list
+        each item in gallery.list 
+            li.gallery__item(class=item.modificator)
+                a.gallery__item-link(href=`img/${item.link}`, data-glightbox=gallery.id) 
+                    if item.img
+                        img(src=`img/${item.img}`, alt="")  
+                    if item.video
+                        video(src=`img/${item.video}#t=0.1` preload="metadata" playsinline )
+                    if item.text 
+                        span.gallery__item-text= item.text

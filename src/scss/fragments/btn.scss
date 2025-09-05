@@ -101,22 +101,32 @@
 
     &--elevated {
         color: var(--on-surface-on-surface-light, #fff);
+        background: var(--surface-container-surface-container-high, #9263e7);
 
         &::after {
             content: "";
             position: absolute;
             inset: 0;
-            z-index: -1;
+            z-index: 0;
             pointer-events: none;
-            background: var(--surface-container-surface-container-high, #9263e7);
+            @include transition(background);
+        }
+
+        & > * {
+            position: relative;
+            z-index: 1;
         }
 
         @include hover {
-            background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+            &::after {
+                background: var(--states-hovered, rgba(255, 255, 255, 0.08));
+            }
         }
 
         @include activeFocus {
-            background: var(--states-focused, rgba(255, 255, 255, 0.12));
+            &::after {
+                background: var(--states-focused, rgba(255, 255, 255, 0.12));
+            }
         }
 
         &[disabled],

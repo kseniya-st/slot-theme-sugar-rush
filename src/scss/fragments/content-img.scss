@@ -1,0 +1,61 @@
+@use "../settings" as *;
+
+.content-img {
+    display: grid;
+    grid-template-columns: 1fr fit-content(50%);
+    gap: 20px 24px;
+    margin-top: 24px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    & > *:only-child {
+        grid-column: 1 / -1;
+    }
+    .btn {
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    &__content {
+        grid-column: span 1;
+    }
+
+    img {
+        width: 100%;
+        grid-column: span 1;
+        margin: 0;
+    }
+
+    &--reversed {
+        .content-img__content {
+            order: 1;
+        }
+        img {
+            order: -1;
+        }
+    }
+
+    @include media-max-md {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        & > img {
+            width: 100%;
+        }
+        .btn {
+            width: 100%;
+
+            &:not(:first-child) {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    @include media-max-sm {
+        margin-top: 20px;
+    }
+}

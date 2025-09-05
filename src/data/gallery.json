@@ -1,0 +1,29 @@
+{
+    "gallery": {
+        "id": "gallery",
+        "list": [
+            { "modificator": "", "img": "gallery-img.png", "link": "gallery-img.png" },
+            { "modificator": "", "img": "gallery-img-2.png", "link": "gallery-img-2.png" },
+            { "modificator": "", "img": "gallery-img-3.png", "link": "gallery-img-3.png" },
+            {
+                "modificator": "gallery__item--video",
+                "img": "gallery-img-3.png",
+                "text":"Kong FU Pokie ",
+                "link": "video.mp4"
+            }
+        ]
+    },
+    "gallery1": {
+        "id": "gallery1",
+        "list": [
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" },
+            { "modificator": "", "img": "phone.png", "link": "phone.png" }
+        ]
+    }
+}

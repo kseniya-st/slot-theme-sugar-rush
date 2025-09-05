@@ -7,3 +7,4 @@ import { initForm } from "./fragments/form";
 import { initCopyBtn } from "./fragments/copyBtn";
 import { initButton } from "./fragments/button";
 import { initLang } from "./fragments/lang";
+import { imgGallery } from "./fragments/imgGallery";
