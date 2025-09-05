@@ -527,7 +527,7 @@ body {
   align-items: stretch;
   justify-content: flex-start;
   min-height: 100vh;
-  --bg-img: url("/img/body-bg.webp");
+  --bg-img: url("../img/body-bg.webp");
   background-image: linear-gradient(180deg, #c58fe2 0, #c58fe2 93.75vw, #8f74ef calc(93.75vw + 14.05%), #8d74ef calc(93.75vw + 46.75%), #7662ea calc(93.75vw + 100%));
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -567,7 +567,7 @@ body::before {
     background-image: linear-gradient(180deg, #9567c0 0, #9567c0 291.6vw, #8f74ef calc(291.6vw + 14.05%), #8d74ef calc(291.6vw + 46.75%), #7662ea calc(291.6vw + 100%));
   }
   body::before {
-    background-image: url("/img/body-bg-mob.webp");
+    background-image: url("../img/body-bg-mob.webp");
   }
 }
 
