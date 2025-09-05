@@ -1,0 +1,189 @@
+.listing {
+  margin-top: 24px;
+}
+.listing:first-child {
+  margin-top: 0;
+}
+.listing__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.listing__row {
+  width: 100%;
+  display: flex;
+}
+.listing__item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.listing__item-wrap {
+  position: relative;
+  width: 100%;
+  padding: 13px 13px 13px 136px;
+  border-radius: 32px;
+  border: 3px solid var(--surface-container-surface-container-high, #9263e7);
+  background: var(--surface-container-surface-container-low, #2e1062);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.listing__item-wrap > img, .listing__item-wrap > svg {
+  width: 180px;
+  height: 68px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.listing__item-place {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  height: calc(100% + 6px);
+  width: 104px;
+  border-radius: 32px 0 0 32px;
+  background: var(--secondary-secondary, #1ec079);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-on-primary, #fff);
+  text-align: center;
+  font-size: 1.7777777778rem;
+  line-height: 2.2222222222rem;
+  font-weight: 700;
+}
+@media (max-width: 575.9px) {
+  .listing__item-place {
+    font-size: 1.3333333333rem;
+    line-height: 1.7777777778rem;
+  }
+}
+.listing__item .btn {
+  margin-left: auto;
+  width: 255px;
+  max-width: 100%;
+}
+.listing__item-best {
+  margin-left: 104px;
+  padding: 8px 24px;
+  border-radius: 0 0 32px 32px;
+  background: var(--secondary-secondary, #1ec079);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  line-height: 1.3333333333rem;
+  font-weight: 700;
+}
+@media (max-width: 575.9px) {
+  .listing__item-best {
+    font-size: 0.8888888889rem;
+  }
+}
+.listing__item-best img,
+.listing__item-best svg {
+  max-width: 30px;
+  max-height: 30px;
+  object-fit: contain;
+  color: var(--on-surface-on-surface-light, #fff);
+  text-align: center;
+  margin-top: -3px;
+}
+.listing__item-bonus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  color: var(--on-surface-on-surface, #ece8f2);
+  font-size: 1.2222222222rem;
+  line-height: 1.7777777778rem;
+  font-weight: 700;
+}
+@media (max-width: 575.9px) {
+  .listing__item-bonus {
+    font-size: 1rem;
+    line-height: 1.3333333333rem;
+  }
+}
+.listing__item-bonus img,
+.listing__item-bonus svg {
+  margin-top: -4px;
+  max-width: 44px;
+  max-height: 44px;
+  object-fit: contain;
+}
+@media (max-width: 767.9px) {
+  .listing__item {
+    padding-left: 104px;
+  }
+  .listing__item-wrap {
+    padding: 16px;
+    border-color: var(--secondary-secondary, #1ec079);
+    border-radius: 0 32px 32px 32px;
+  }
+  .listing__item-place {
+    height: 100px;
+    transform: translateX(-100%);
+  }
+  .listing__item-best {
+    margin-inline: auto;
+  }
+  .listing__item-bonus {
+    max-width: calc(100% - 180px - 16px);
+  }
+  .listing__item .btn {
+    width: 100%;
+  }
+}
+@media (max-width: 575.9px) {
+  .listing {
+    margin-top: 20px;
+  }
+  .listing__list {
+    gap: 16px;
+  }
+  .listing__item {
+    padding-left: 48px;
+  }
+  .listing__item-wrap {
+    padding: 13px 9px;
+  }
+  .listing__item-wrap > img, .listing__item-wrap > svg {
+    width: 78px;
+    height: 48px;
+  }
+  .listing__item-bonus {
+    max-width: calc(100% - 78px - 16px);
+    font-size: 1rem;
+    line-height: 1.3333333333rem;
+    font-weight: 700;
+  }
+}
+@media (max-width: 575.9px) and (max-width: 575.9px) {
+  .listing__item-bonus {
+    font-size: 0.8888888889rem;
+  }
+}
+@media (max-width: 575.9px) {
+  .listing__item-bonus img,
+  .listing__item-bonus svg {
+    max-width: 32px;
+    max-height: 32px;
+  }
+  .listing__item-place {
+    width: 48px;
+    height: 64px;
+  }
+}

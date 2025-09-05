@@ -1,0 +1,146 @@
+.how-to {
+  margin-top: 24px;
+  counter-reset: how-to;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.how-to:first-child {
+  margin-top: 0;
+}
+.how-to__item {
+  position: relative;
+  counter-increment: how-to;
+  padding-left: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.how-to__item::before {
+  content: counter(how-to);
+  position: absolute;
+  z-index: 2;
+  left: 7px;
+  top: calc(50% - 3px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  padding-top: 3px;
+  color: var(--on-surface-on-surface-light, #fff);
+  text-align: center;
+  font-size: 1.4444444444rem;
+  line-height: 2.2222222222rem;
+  font-weight: 700;
+  outline: 7px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(158deg, #f5138c 13.75%, #d61392 90.38%);
+}
+.how-to__item::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 34px;
+  top: 0;
+  height: calc(100% + 24px);
+  width: 4px;
+  background: #e5138f;
+}
+.how-to__item-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+.how-to__item-title {
+  margin: 0;
+  color: var(--On-Surface, #fff);
+  font-size: 1.2222222222rem;
+  line-height: 1.7777777778rem;
+  font-weight: 700;
+}
+@media (max-width: 575.9px) {
+  .how-to__item-title {
+    font-size: 1rem;
+    line-height: 1.3333333333rem;
+  }
+}
+.how-to__item-title::before {
+  content: counter(how-to) ". ";
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+}
+.how-to__item-descr {
+  color: var(--on-surface-on-surface, #ece8f2);
+}
+.how-to__item img {
+  max-width: 50%;
+  border-radius: 16px;
+}
+.how-to__item:first-child::after {
+  top: 50%;
+  height: calc(50% + 24px);
+}
+.how-to__item:last-child::after {
+  height: calc(50% + 24px);
+  top: -24px;
+}
+@media (max-width: 767.9px) {
+  .how-to__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .how-to__item .btn,
+  .how-to__item img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .how-to__item::before {
+    transform: unset;
+    top: 7px;
+    left: 7px;
+  }
+  .how-to__item::after {
+    top: 25px;
+  }
+  .how-to__item:first-child::after {
+    top: 25px;
+    height: calc(100% + 24px);
+  }
+  .how-to__item:last-child::after {
+    display: none;
+  }
+}
+@media (max-width: 575.9px) {
+  .how-to__item {
+    padding-left: 70px;
+    gap: 12px;
+  }
+  .how-to__item-content {
+    gap: 12px;
+  }
+  .how-to__item::before {
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    outline-width: 5px;
+  }
+  .how-to__item::after {
+    left: 25px;
+  }
+  .how-to__item-title::before {
+    min-width: 27px;
+  }
+}

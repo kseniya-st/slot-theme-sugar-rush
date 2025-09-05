@@ -1,0 +1,127 @@
+.scrolling .table td,
+.scrolling .table th {
+  pointer-events: none;
+  user-select: none;
+}
+
+.table.js-scroll-list {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: 24px;
+}
+.table.js-scroll-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.table.js-scroll-list:first-child {
+  margin-top: 0;
+}
+.table.js-scroll-list table {
+  table-layout: auto;
+  min-width: 700px;
+}
+.table.js-scroll-list table td:last-child {
+  text-align: unset;
+}
+@media (max-width: 575.9px) {
+  .table.js-scroll-list {
+    margin-top: 20px;
+  }
+}
+
+table:not([class]),
+table.wp-block-table {
+  table-layout: fixed;
+  border-spacing: 0;
+  margin-top: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--outline-outline-light, #6344ab);
+  font-size: 1rem;
+  line-height: 1.3333333333rem;
+  font-weight: 400;
+}
+@media (max-width: 575.9px) {
+  table:not([class]),
+  table.wp-block-table {
+    font-size: 0.8333333333rem;
+  }
+}
+table:not([class]):first-child,
+table.wp-block-table:first-child {
+  margin-top: 0;
+}
+table:not([class]) th,
+table.wp-block-table th {
+  padding: 16px 32px;
+}
+table:not([class]) th,
+table:not([class]) td,
+table.wp-block-table th,
+table.wp-block-table td {
+  border-right: 1px solid var(--outline-outline-light, #6344ab);
+}
+table:not([class]) th:last-child,
+table:not([class]) td:last-child,
+table.wp-block-table th:last-child,
+table.wp-block-table td:last-child {
+  border-right: 0;
+}
+table:not([class]) th:first-child,
+table:not([class]) td:first-child,
+table.wp-block-table th:first-child,
+table.wp-block-table td:first-child {
+  padding-left: 16px;
+  white-space: nowrap;
+}
+table:not([class]) td,
+table.wp-block-table td {
+  height: 56px;
+  padding: 8px 32px;
+}
+table:not([class]) th,
+table.wp-block-table th {
+  border-bottom: 1px solid var(--outline-outline-light, #6344ab);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.3333333333rem;
+  font-weight: 700;
+}
+@media (max-width: 575.9px) {
+  table:not([class]) th,
+  table.wp-block-table th {
+    font-size: 0.8888888889rem;
+  }
+}
+table:not([class]) tr:not(:last-child) td,
+table.wp-block-table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--outline-outline-light, #6344ab);
+}
+table:not([class]) tbody:first-child td:first-child,
+table.wp-block-table tbody:first-child td:first-child {
+  font-size: 0.8888888889rem;
+  line-height: 1.3333333333rem;
+  font-weight: 700;
+  width: 1px;
+}
+@media (max-width: 575.9px) {
+  table:not([class]),
+  table.wp-block-table {
+    margin-top: 20px;
+  }
+  table:not([class]) th,
+  table:not([class]) td,
+  table.wp-block-table th,
+  table.wp-block-table td {
+    padding: 8px 20px;
+  }
+  table:not([class]) th:first-child,
+  table:not([class]) td:first-child,
+  table.wp-block-table th:first-child,
+  table.wp-block-table td:first-child {
+    padding-left: 12px;
+  }
+}
