@@ -23,7 +23,7 @@
     svg {
         display: flex;
         @include minSize(18px, 18px);
-        @include maxSize(48px, 48px);
+        @include maxSize(24px, 24px);
         vertical-align: middle;
         path {
             fill: currentColor;
@@ -37,6 +37,12 @@
 
     &--l {
         padding: 16px 32px;
+
+        @include media-min-sm {
+            svg {
+                @include maxSize(32px, 32px);
+            }
+        }
     }
     &--s {
         padding: 8px 16px;

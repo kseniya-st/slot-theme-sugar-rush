@@ -63,6 +63,9 @@
 
             &::before {
                 content: counter(how-to) ". ";
+                min-width: 33px;
+                text-align: center;
+                display: inline-block;
             }
         }
 
@@ -145,6 +148,12 @@
 
             &::after {
                 left: 25px;
+            }
+
+            &-title {
+                &::before {
+                    min-width: 27px;
+                }
             }
         }
     }

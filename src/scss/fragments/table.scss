@@ -51,9 +51,12 @@ table.wp-block-table {
         margin-top: 0;
     }
 
+    th {
+        padding: 16px 32px;
+    }
+
     th,
     td {
-        padding: 16px 32px;
         border-right: 1px solid var(--outline-outline-light, #6344ab);
 
         &:last-child {
@@ -62,9 +65,12 @@ table.wp-block-table {
 
         &:first-child {
             padding-left: 16px;
-            width: 1px;
             white-space: nowrap;
         }
+    }
+    td {
+        height: 56px;
+        padding: 8px 32px;
     }
 
     th {
@@ -85,6 +91,7 @@ table.wp-block-table {
         font-size: rem(16);
         line-height: rem(24);
         font-weight: 700;
+        width: 1px;
     }
 
     @include media-max-sm {

@@ -141,6 +141,9 @@
     }
 
     @include media-max-sm {
+        padding: 24px 16px;
+        gap: 20px;
+
         &.wrapper {
             margin-block: 32px;
         }
@@ -148,6 +151,7 @@
         &__copyright {
             @include font-body-small;
         }
+
         &__logos {
             gap: 16px;
             img,
@@ -155,11 +159,20 @@
                 max-height: 32px;
             }
         }
+
         &__flags {
             gap: 8px;
             li {
                 max-width: 24px;
                 max-height: 17px;
+            }
+        }
+
+        &__row {
+            padding-bottom: 20px;
+
+            &--copyright {
+                padding-block: 20px 0;
             }
         }
     }

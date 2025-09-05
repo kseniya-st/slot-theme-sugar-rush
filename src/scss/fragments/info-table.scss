@@ -33,7 +33,7 @@
     }
 
     &__rating {
-        @include rateStarsOne(24px, 18px);
+        @include rateStarsOne(24px);
 
         span {
             color: var(--tertiary-tertiary, #f6b018);

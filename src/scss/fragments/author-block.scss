@@ -1,12 +1,17 @@
 @use "../settings" as *;
 
 .author-block {
+    margin-top: 24px;
     padding: 32px 24px 0;
     border-radius: 32px;
     overflow: hidden;
     background: var(--surface-container-surface-container-transparent, rgba(59, 28, 129, 0.8));
 
     @include flex(column, stretch, flex-start, 64px);
+
+    &:first-child {
+        margin-top: 0;
+    }
 
     &__descr {
         text-align: center;

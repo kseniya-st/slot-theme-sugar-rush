@@ -6,7 +6,15 @@
         },
         {
             "link": "#",
+            "title": "No deposit Casinos"
+        },
+        {
+            "link": "#",
             "title": "StayCasino"
+        },
+        {
+            "link": "#",
+            "title": "Aviator"
         },
         {
             "link": "#",
@@ -15,17 +23,10 @@
         {
             "link": "#",
             "title": "No deposit Casinos"
-        },
-        {
-            "link": "#",
-            "title": "Aviator"
-        },
-        {
-            "link": "#",
-            "title": "No deposit Casinos"
         }
     ],
     "footerLogos": [
+        "img/18+.png",
         "img/logo-1.png",
         "img/logo-2.png",
         "img/logo-3.png",

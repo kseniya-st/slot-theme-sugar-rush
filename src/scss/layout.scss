@@ -54,6 +54,10 @@
     }
 }
 
+.section-hero + .wrapper {
+    margin-top: 0;
+}
+
 .cols {
     display: grid;
     grid-template-columns: 1fr fit-content(50%);

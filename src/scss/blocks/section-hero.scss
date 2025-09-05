@@ -33,7 +33,8 @@
         }
 
         &-logo {
-            max-width: 260px;
+            max-width: 100%;
+            width: 260px;
             @include flex(row, center, flex-start, 8px);
 
             color: var(--on-surface-on-surface-light, #fff);
@@ -67,6 +68,7 @@
     }
 
     @include media-max-sm {
+        margin-block: 16px;
         gap: 0;
 
         &__content {
@@ -81,8 +83,10 @@
             order: -1;
             min-height: 268px;
             border-width: 10px;
+            border-radius: 32px;
 
             &-logo {
+                width: 244px;
                 img,
                 svg {
                     width: 84px;
