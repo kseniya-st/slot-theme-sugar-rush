@@ -1157,7 +1157,12 @@ svg {
     border-radius: 9px;
   }
 }
-@media (max-width: 1239.9px) {
+@media (max-width: 767.9px) {
+  .header:not(.menu-active) .header__mob {
+    display: none;
+  }
+}
+@media (max-width: 767.9px) and (max-width: 1239.9px) {
   .header__mob {
     display: flex;
     flex-direction: column;
@@ -1194,12 +1199,6 @@ svg {
   .header__mob > .btn {
     order: -1;
     width: 100%;
-    padding: 12px 24px;
-  }
-}
-@media (max-width: 767.9px) {
-  .header:not(.menu-active) .header__mob {
-    display: none;
   }
 }
 @media (max-width: 575.9px) {

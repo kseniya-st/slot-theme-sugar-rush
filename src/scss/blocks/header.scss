@@ -133,28 +133,27 @@
             @include thin-v-scrollbar;
         }
     }
-    @include mediaMax($burger-max) {
-        &__mob {
-            @include flex(column, stretch, flex-start);
-            background: #42208b;
-            padding: 10px var(--offsets, 20px);
-            overflow-y: auto;
-            @include absolute(100%, 0);
-            @include size(100%, calc(100vh - var(--header-height) + 2px));
-            @include thin-v-scrollbar;
-
-            & > .btn {
-                order: -1;
-                width: 100%;
-                padding: 12px 24px;
-            }
-        }
-    }
 
     @include media-max-md {
         &:not(.menu-active) {
             .header__mob {
                 display: none;
+            }
+        }
+        &__mob {
+            @include mediaMax($burger-max) {
+                @include flex(column, stretch, flex-start);
+                background: #42208b;
+                padding: 10px var(--offsets, 20px);
+                overflow-y: auto;
+                @include absolute(100%, 0);
+                @include size(100%, calc(100vh - var(--header-height) + 2px));
+                @include thin-v-scrollbar;
+
+                & > .btn {
+                    order: -1;
+                    width: 100%;
+                }
             }
         }
     }
