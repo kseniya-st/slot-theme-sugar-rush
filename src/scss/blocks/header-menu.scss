@@ -2,7 +2,8 @@
 
 .header-menu {
     flex-wrap: wrap;
-    @include flex(row, center, flex-start, 24px);
+    @include flex(row, center, flex-start);
+    gap: 10px 24px;
     $burger-max: $max-lg;
     $burger-min: $min-lg;
 

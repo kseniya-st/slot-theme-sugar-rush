@@ -71,6 +71,7 @@
         }
 
         img {
+            max-width: 50%;
             border-radius: 16px;
         }
 
@@ -89,9 +90,6 @@
         }
     }
 
-    @include media-max-mlg {
-    }
-
     @include media-max-md {
         &__item {
             flex-direction: column;
@@ -101,15 +99,13 @@
             .btn,
             img {
                 width: 100%;
+                max-width: 100%;
             }
 
             &::before {
                 transform: unset;
                 top: 7px;
                 left: 7px;
-                // width: 40px;
-                // height: 40px;
-                // outline-width: 5px;
             }
 
             &::after {
