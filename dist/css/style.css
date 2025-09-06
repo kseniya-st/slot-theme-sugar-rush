@@ -1872,6 +1872,7 @@ svg {
 .modal__content .btn {
   margin-inline: auto;
   margin-top: -4px;
+  min-width: 200px;
 }
 @media (max-width: 575.9px) {
   .modal__content {
@@ -1884,6 +1885,7 @@ svg {
   }
   .modal__content .btn {
     width: 100%;
+    min-width: unset;
   }
 }
 .modal__body {
